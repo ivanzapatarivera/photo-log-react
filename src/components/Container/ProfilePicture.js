@@ -20,14 +20,14 @@ const ProfilePicture = () => {
 
   return (
     <div>
-      <div className="col-12 col-md-3 mx-auto">
+      <div className="col-12 col-md-6 col-lg-3 mx-auto text-center">
         {data?.map((item, index, array) =>
           // Declaring last item of the array
           index === array.length - 1 ? (
             <ul>
               <li>
                 {/* Obtaining URL of last item of the array */}
-                <img src={item.URL} className="profilepic profilePicture" />
+                <img src={item.URL} className="profilepic profilePicture" id="profilePicture" />
               </li>
             </ul>
           ) : (
@@ -66,6 +66,6 @@ const ProfilePicture = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProfilePicture;

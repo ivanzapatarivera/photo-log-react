@@ -9,6 +9,12 @@ html {
   margin: 0;
 }
 
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .mainContainer {
   height: 100vh;
   background-color: #12232e;  
@@ -225,8 +231,10 @@ h1,
 .profilepic {
   width: 80%;
   height: auto;
-  margin-top: 50%;
+  margin-top: 125px;
   border-radius: 50%;
+  margin-bottom: 25px;
+  
 }
 
 .cardImage {
