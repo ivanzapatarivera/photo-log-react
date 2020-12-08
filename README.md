@@ -31,7 +31,7 @@ PhotoLog React is a React app that will allow the user to log their pictures and
 
 ## Usage Information 
  
-    Log all pictures organized on albums by location automatically. 
+    Log photos and have them organized in albums by location automatically. 
 
 
 ## Installation Instructions 
