@@ -4,6 +4,7 @@ import "./index.css";
 // import App from './App';
 import Body from "./components/Body";
 import Nav from "./components/Nav";
+import NavMobile from "./components/NavMobile";
 
 import reportWebVitals from "./reportWebVitals";
 
