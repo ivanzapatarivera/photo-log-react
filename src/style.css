@@ -2,6 +2,12 @@ body {
   background-color: #203647;
   overflow-x: hidden;
 }
+
+html {
+  gap: 0px;
+  padding: 0;
+  margin: 0;
+}
 .navbar,
 .footer {
   background-color: #007cc7;
