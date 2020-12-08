@@ -1,10 +1,11 @@
 import "../style.css";
+import logo from '../images/logo-nav.png';
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
       <div className="container">
         <a className="navbar-brand" href="/">
-          <img src="../images/logo-nav.png" className="logo-nav" />
+          <img src={logo} className="logo-nav" />
         </a>
         <button
           className="navbar-toggler"
