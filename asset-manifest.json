@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/photo-log-react/static/css/main.d90d1c6f.chunk.css",
-    "main.js": "/photo-log-react/static/js/main.1039e326.chunk.js",
-    "main.js.map": "/photo-log-react/static/js/main.1039e326.chunk.js.map",
+    "main.js": "/photo-log-react/static/js/main.9e8b89fa.chunk.js",
+    "main.js.map": "/photo-log-react/static/js/main.9e8b89fa.chunk.js.map",
     "runtime-main.js": "/photo-log-react/static/js/runtime-main.6d2153aa.js",
     "runtime-main.js.map": "/photo-log-react/static/js/runtime-main.6d2153aa.js.map",
     "static/js/2.2c151573.chunk.js": "/photo-log-react/static/js/2.2c151573.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6d2153aa.js",
     "static/js/2.2c151573.chunk.js",
     "static/css/main.d90d1c6f.chunk.css",
-    "static/js/main.1039e326.chunk.js"
+    "static/js/main.9e8b89fa.chunk.js"
   ]
 }
