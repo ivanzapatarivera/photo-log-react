@@ -1,6 +1,7 @@
 import "../style.css";
 function Body() {
-  return (
+ 
+      return (
     <div className="row">
       {/* <!-- Column with profile content --> */}
       <div className="col-12 col-md-8 mx-auto">
