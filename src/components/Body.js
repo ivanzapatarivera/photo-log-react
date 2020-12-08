@@ -36,7 +36,9 @@ function Body() {
             <h4 className="text-center pt-3" id="picturesCollageHeading">
               Recent PhotoLogs
             </h4>
-            <div className="row p-3 mainCollageDIV" id="collageDivs"></div>
+            <div className="row p-3 mainCollageDIV" id="collageDivs">
+              
+            </div>
           </div>
         </div>
 
@@ -67,6 +69,8 @@ function Body() {
       </div>
     </div>
   );
+
+
 }
 
 export default Body;
