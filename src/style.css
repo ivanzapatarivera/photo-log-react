@@ -8,6 +8,12 @@ html {
   padding: 0;
   margin: 0;
 }
+
+.mainContainer {
+  height: 100vh;
+  background-color: #12232e;  
+}
+
 .navbar,
 .footer {
   background-color: #007cc7;

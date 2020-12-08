@@ -4,9 +4,11 @@ import "./index.css";
 // import App from './App';
 
 // Webpage Components
-import Body from "./components/Body";
+// import Body from "./components/Body";
+// import Container from "./components/Container"
 import Nav from "./components/Nav";
 import NavMobile from "./components/NavMobile";
+import Container from './components/Container'
 import Footer from "./components/Footer";
 import FooterMobile from "./components/FooterMobile";
 
@@ -17,6 +19,9 @@ ReactDOM.render(
     {/* <Body /> */}
     <Nav />
     <NavMobile />
+    <Container>
+
+    </ Container>
     <Footer />
     <FooterMobile />
   </React.StrictMode>,
