@@ -14,6 +14,10 @@ html {
   background-color: #12232e;  
 }
 
+.fontWhite {
+  color:white;
+}
+
 .navbar,
 .footer {
   background-color: #007cc7;
@@ -38,7 +42,11 @@ color: white;
   font-size: 2.5rem;
 }
 
-.profilepic:hover {
+/* .profilePicture {
+  padding-top: 10%;
+} */
+
+.profilePicture:hover {
   cursor: pointer;
 }
 
@@ -215,8 +223,9 @@ h1,
 /* ---------------------- */
 
 .profilepic {
-  width: 100%;
+  width: 80%;
   height: auto;
+  margin-top: 50%;
   border-radius: 50%;
 }
 

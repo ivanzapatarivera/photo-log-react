@@ -1,9 +1,14 @@
-import '../style.css';
+import "../style.css";
+import ProfilePicture from "./Container/ProfilePicture";
 
 function Container() {
-    return (
-        <div className="container mainContainer mt-5 pt-5">Container DIV</div>
-    )
+  return (
+    <div className="container mainContainer">
+      <div className="row">
+        <ProfilePicture />
+      </div>
+    </div>
+  );
 }
 
 export default Container;
