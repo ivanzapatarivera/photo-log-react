@@ -31,7 +31,7 @@ function Body() {
         </div>
 
         {/* <!-- Picture Collage --> */}
-        <div className="row picturesWall" id="picturesCollage">
+        <div className="row picturesWall mx-auto" id="picturesCollage">
           <div className="col-12">
             <h4 className="text-center pt-3" id="picturesCollageHeading">
               Recent PhotoLogs
