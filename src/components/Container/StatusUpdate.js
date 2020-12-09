@@ -4,7 +4,7 @@ const StatusUpdate = () => {
   return (
     <div>
       <div className="status statusText text-center" id="statusBox">
-        <div id="statusText">
+        <div id="statusText" className="col-12">
           <div id="status" className="statusForm mx-auto">
             <form
               action="/status"
