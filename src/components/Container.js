@@ -2,6 +2,7 @@ import "../style.css";
 import Profile from "./Container/ProfilePicture";
 import StatusUpdate from "./Container/StatusUpdate";
 import PhotoLogs from "./Container/PhotoLogs";
+import PictureDiv from "./Container/PictureDiv";
 import Timeline from "./Container/Timeline";
 
 function Container() {
@@ -12,6 +13,7 @@ function Container() {
           <Profile />
           <StatusUpdate />
           <PhotoLogs />
+          <PictureDiv />
           <Timeline />
         </div>
       </div>
