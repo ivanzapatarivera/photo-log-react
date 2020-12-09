@@ -1,5 +1,5 @@
 import "../style.css";
-import logo from '../images/logo-nav.png';
+import logo from "../images/logo-nav.png";
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm navbarDesktop">
@@ -56,10 +56,17 @@ function Nav() {
         </div>
       </div>
     </nav>
-  )
+  );
 
   function logNewPhoto() {
-    const logNewPhotoIcon = document.querySelector("")
+    const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
+    if (logNewPhotoFrame.style.display === "flex") {
+      logNewPhotoFrame.style.display = "none";
+      logNewPhotoFrame.classList.remove("fade-in");
+    } else {
+      logNewPhotoFrame.style.display = "flex";
+      logNewPhotoFrame.classList.add("fade-in");
+    }
   }
 }
 

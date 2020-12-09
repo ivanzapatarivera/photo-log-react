@@ -3,35 +3,44 @@ import "../../style.css";
 function PhotoLogs() {
   return (
     <div>
-      <div class="row mx-auto p-1 logNewPhotoForm fade-in" id="logNewPhotoFrame" style={{display: "flex"}}>
-      {/* Form to log neww photos */}
-      <div class="col-12 col-md-6">
-      <div className="card-body col-12 col-md-8 mx-auto logNewPhotoFormDiv">
-        <h5 className="text-center">Log your Photo!</h5>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-          <label className="btn btn-primary">
-            <i className="fa fa-image"></i> Photo{" "}
-            <input
-              type="file"
-              name="upload"
-              id="upload"
-              style={{ display: "none" }}
-            />
-          </label>
-          <div id="previewFileName"></div>
-          <button className="button btn" type="submit" id="newImageSubmit">
-            <i className="fas fa-check"></i>
-          </button>
-          <span
-            className="button buttonCancel btn ml-1"
-            id="logNewPhotoFormCancelBtn"
-          >
-            <i className="fas fa-times"></i>
-          </span>
-        </form>
+      <div
+        class="row mx-auto p-1 logNewPhotoForm fade-in"
+        id="logNewPhotoFrame"
+      >
+        {/* Form to log neww photos */}
+        <div class="col-12 col-md-6">
+          <div className="card-body col-12 col-md-8 mx-auto logNewPhotoFormDiv">
+            <h5 className="text-center">Log your Photo!</h5>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+              <label className="btn btn-primary">
+                <i className="fa fa-image"></i> Photo{" "}
+                <input
+                  type="file"
+                  name="upload"
+                  id="upload"
+                  style={{ display: "none" }}
+                />
+              </label>
+              <div id="previewFileName"></div>
+              <button
+                className="button btn"
+                onClick={closeLogNewPhotoFrame}
+                type="submit"
+                id="newImageSubmit"
+              >
+                <i className="fas fa-check"></i>
+              </button>
+              <span
+                className="button buttonCancel btn ml-1"
+                id="logNewPhotoFormCancelBtn"
+                onClick={closeLogNewPhotoFrame}
+              >
+                <i className="fas fa-times"></i>
+              </span>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
 
       {/* Structure for recent photo logs */}
       <div className="row picturesWall" id="picturesCollage">
@@ -119,6 +128,13 @@ function PhotoLogs() {
       </div>
     </div>
   );
+
+  function closeLogNewPhotoFrame() {
+    const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
+    const previewFileName = document.querySelector("#logNewPhotoFrame");
+    logNewPhotoFrame.style.display = "none";
+    previewFileName.innerText = "";
+  }
 
   function showEventPicDiv() {
     const eventPicDiv = document.querySelector("#pictureDiv");
