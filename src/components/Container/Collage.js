@@ -120,8 +120,6 @@ const Collage = () => {
 
   function showEventPicDiv(event) {
     var eventPicDiv = document.querySelector("#pictureDiv");
-    // console.log(event);
-    // const pictureDiv = document.querySelector("#pictureDiv");
     fetch("https://photo-logger.herokuapp.com/log", {
       method: "get",
       dataType: "jsonp",
@@ -137,45 +135,20 @@ const Collage = () => {
           const id = dataMap._id;
           const description = dataMap.description;
           const URL = dataMap.URL;
-          console.log(title, id, description, URL)
-
-          /*        PREVIOUS CARDS CARROUSEL LAYOUT --- DO NOT DELETE
-        var card = `<div class="cards mx-auto text-center col-4 col-lg-2" id=${id}>
-                      <p class="mt-4" data-id=${id}>
-                      <p><img src=${URL} class="cardImage" /><br></p>
-                      <span class="cardTitle">${title}&nbsp;<br>
-                        <span onClick="delete" data-id=${id} class="delete">
-                          <i class="far fa-trash-alt delete" data-id=${id}></i>
-                        </span>
-                      </span></p>
-                    </div>`;
-
-        event.insertAdjacentHTML("beforeend", card);
-*/
 
           // Displays fullscreen DIV with dynamically generated albums of traveled places
-         
-            eventPicDiv.style.visibility = "visible";
-            eventPicDiv.classList.add("flip-in-ver-left");
-            var currentSrc = event.target.currentSrc
-            var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
+          eventPicDiv.style.visibility = "visible";
+          eventPicDiv.classList.add("flip-in-ver-left");
+          var currentSrc = event.target.currentSrc;
+          var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
                               <div id="caption" class="caption mt-0">${description}
                                 <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
                                   <i class="far fa-trash-alt delete" data-id=${id}></i>
                                 </button>
                               </div>`;
-            if (eventPicDiv) {
-              eventPicDiv.innerHTML = enlargedImage;
-            }
-
-            // Changes albums of traveled places visibility
-        
-              // if (eventPicDiv) {
-              //   eventPicDiv.style.visibility = "hidden";
-              //   eventPicDiv.innerHTML = "";
-              //   eventPicDiv.classList.remove("flip-in-ver-left");
-              // }
-  
+          if (eventPicDiv) {
+            eventPicDiv.innerHTML = enlargedImage;
+          }
         });
       });
   }
