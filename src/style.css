@@ -142,6 +142,7 @@ h1,
   top: 0px;
   left: 0px;
   height: 100vh;
+  width: 100vw;
   z-index: 1000;
 }
 
@@ -649,9 +650,7 @@ THIS SECTION USES ALL MOBILE MEDIA QUERIES
     height: auto;
     border-radius: 50%;
   }
-  .newProfilePic{
-    padding-top: 50%;
-  }
+  
   .placesTraveled {
     visibility: hidden;
     position: fixed;

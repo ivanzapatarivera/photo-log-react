@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import "../../style.css";
+import StatusUpdate from './StatusUpdate';
+import PhotoLogs from "./PhotoLogs";
 
-const ProfilePicture = () => {
+const Profile = () => {
   const [data, setData] = useState(null);
   const fetchURL = "https://photo-logger.herokuapp.com";
   const getData = () =>
@@ -36,7 +38,7 @@ const ProfilePicture = () => {
           )
         )}
       </div>
-      <div>
+      <div id="newProfilePic" className="col-12 col-md-6 mx-auto newProfilePic">
         <form
           action="/profilepic"
           method="post"
@@ -65,9 +67,10 @@ const ProfilePicture = () => {
           </span>
         </form>
       </div>
-   
+      <StatusUpdate />
+      <PhotoLogs />
     </div>
   );
 }
 
-export default ProfilePicture;
+export default Profile;
