@@ -1,6 +1,7 @@
 import "../style.css";
 import PhotoLogs from "./Container/PhotoLogs";
 import ProfilePicture from "./Container/ProfilePicture";
+import Timeline from "./Container/Timeline"
 
 function Container() {
   return (
@@ -8,6 +9,7 @@ function Container() {
       <div className="row">
         <ProfilePicture />
         <PhotoLogs />
+        <Timeline />
       </div>
     </div>
   );
