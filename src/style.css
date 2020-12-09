@@ -16,8 +16,8 @@ ul, li {
 }
 
 .mainContainer {
-  height: 100vh;
-  background-color: #12232e;  
+  background-color: #12232e; 
+  padding-bottom: 250px; 
 }
 
 .fontWhite {
