@@ -3,8 +3,10 @@ import "../../style.css";
 function PhotoLogs() {
   return (
     <div>
+      <div class="row mx-auto p-1 logNewPhotoForm fade-in" id="logNewPhotoFrame" style={{display: "flex"}}>
       {/* Form to log neww photos */}
-      <div className="card-body logNewPhotoFormDiv">
+      <div class="col-12 col-md-6">
+      <div className="card-body col-12 col-md-8 mx-auto logNewPhotoFormDiv">
         <h5 className="text-center">Log your Photo!</h5>
         <form action="/upload" method="post" enctype="multipart/form-data">
           <label className="btn btn-primary">
@@ -28,6 +30,8 @@ function PhotoLogs() {
           </span>
         </form>
       </div>
+    </div>
+    </div>
 
       {/* Structure for recent photo logs */}
       <div className="row picturesWall" id="picturesCollage">
