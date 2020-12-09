@@ -297,18 +297,13 @@ Images collage section
 .sixthDiv:hover {
   transform: scale(1.075);
 }
-/* 
-.collageImageDIV {
-  flex-shrink: 0;
-  padding: 0;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
 
-} */
 
 .collageImageDIV {
-  padding: 2.5px;
+  padding-top: 2.5px;
+  padding-right: 2.5px;
+  padding-bottom: 2.5px;
+  padding-left: 2.5px;
 }
 .picturesWall {
   width: 100%;

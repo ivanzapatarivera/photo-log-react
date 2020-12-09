@@ -21,7 +21,11 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="col-12 col-md-6 col-lg-3 mx-auto text-center">
+      <div
+        className="col-12 col-md-6 col-lg-3 mx-auto text-center"
+        id="show"
+        onClick={profilePictureDivEventListener}
+      >
         {data?.map((item, index, array) =>
           // Declaring last item of the array
           index === array.length - 1 ? (
@@ -40,7 +44,11 @@ const Profile = () => {
           )
         )}
       </div>
-      <div id="newProfilePic" className="col-12 col-md-6 mx-auto newProfilePic">
+      <div
+        id="newProfilePic"
+        className="col-12 col-md-6 mx-auto newProfilePic"
+        // style={{ display: "none" }}
+      >
         <form
           action="/profilepic"
           method="post"
@@ -58,12 +66,14 @@ const Profile = () => {
           <button
             class="button btn btn-primary"
             id="buttonSumbitProfilePicture"
+            onClick={buttonClickedEventListener}
           >
             <i class="fas fa-check"></i>
           </button>
           <span
             class="buttonCancel btn px-2 ml-1"
             id="buttonCancelProfilePicture"
+            onClick={buttonClickedEventListener}
           >
             <i class="fas fa-times"></i>
           </span>
@@ -71,6 +81,27 @@ const Profile = () => {
       </div>
     </div>
   );
+
+  // Display the latest posted image as profile picture
+  function profilePictureDivEventListener(e) {
+    const profilePictureUpdateForm = document.querySelector("#newProfilePic");
+    e.preventDefault();
+    if (profilePictureUpdateForm.style.display === "block") {
+      profilePictureUpdateForm.style.display = "none";
+      profilePictureUpdateForm.classList.remove("scale-in-center");
+    } else {
+      profilePictureUpdateForm.style.display = "block";
+      profilePictureUpdateForm.classList.add("scale-in-center");
+    }
+  }
+
+  // Event Listener to close div when clicking on cancel button
+  function buttonClickedEventListener(e) {
+    const profilePictureUpdateForm = document.querySelector("#newProfilePic");
+    e.preventDefault(e);
+    profilePictureUpdateForm.style.display = "none";
+    profilePictureUpdateForm.classList.remove("scale-in-center");
+  }
 };
 
 export default Profile;
