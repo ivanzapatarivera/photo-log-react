@@ -6,14 +6,14 @@ const Profile = () => {
   const [data, setData] = useState(null);
   const fetchURL = "https://photo-logger.herokuapp.com";
   const getData = () =>
-    fetch(`${fetchURL}/profilepic`).then((res) => res.json())
-//   fetch(`${fetchURL}/profilepic`, {
-//     method: "POST",
-//     header: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ item }),
-//   }).then((data) => data.json());
+    fetch(`${fetchURL}/profilepic`).then((res) => res.json());
+  //   fetch(`${fetchURL}/profilepic`, {
+  //     method: "POST",
+  //     header: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ item }),
+  //   }).then((data) => data.json());
 
   useEffect(() => {
     getData().then((data) => setData(data));
@@ -28,7 +28,11 @@ const Profile = () => {
             <ul>
               <li>
                 {/* Obtaining URL of last item of the array */}
-                <img src={item.URL} className="profilepic profilePicture" id="profilePicture" />
+                <img
+                  src={item.URL}
+                  className="profilepic profilePicture"
+                  id="profilePicture"
+                />
               </li>
             </ul>
           ) : (
@@ -67,6 +71,6 @@ const Profile = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Profile;
