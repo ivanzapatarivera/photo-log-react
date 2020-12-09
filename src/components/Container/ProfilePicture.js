@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import "../../style.css";
-import StatusUpdate from './StatusUpdate';
-import PhotoLogs from "./PhotoLogs";
 
 const Profile = () => {
   const [data, setData] = useState(null);
