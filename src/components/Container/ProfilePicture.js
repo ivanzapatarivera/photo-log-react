@@ -7,13 +7,7 @@ const Profile = () => {
   const fetchURL = "https://photo-logger.herokuapp.com";
   const getData = () =>
     fetch(`${fetchURL}/profilepic`).then((res) => res.json());
-  //   fetch(`${fetchURL}/profilepic`, {
-  //     method: "POST",
-  //     header: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ item }),
-  //   }).then((data) => data.json());
+
 
   useEffect(() => {
     getData().then((data) => setData(data));
@@ -47,7 +41,6 @@ const Profile = () => {
       <div
         id="newProfilePic"
         className="col-12 col-md-6 mx-auto newProfilePic"
-        // style={{ display: "none" }}
       >
         <form
           action="/profilepic"
