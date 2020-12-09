@@ -2,7 +2,7 @@ import "../style.css";
 import Profile from "./Container/ProfilePicture";
 import StatusUpdate from "./Container/StatusUpdate";
 import PhotoLogs from "./Container/PhotoLogs";
-import PictureDiv from "./Container/PictureDiv";
+import PictureDiv from "./Container/PictureDiv.js";
 import Timeline from "./Container/Timeline";
 
 function Container() {
