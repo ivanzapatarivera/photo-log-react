@@ -27,7 +27,7 @@ function Nav() {
               </a>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item" onClick={logNewPhoto}>
               <a className="nav-link" id="logNewPhoto">
                 <i className="fas fa-camera"></i> Log a Photo
               </a>
@@ -56,7 +56,11 @@ function Nav() {
         </div>
       </div>
     </nav>
-  );
+  )
+
+  function logNewPhoto() {
+    const logNewPhotoIcon = document.querySelector("")
+  }
 }
 
 export default Nav;

@@ -3,6 +3,33 @@ import "../../style.css";
 function PhotoLogs() {
   return (
     <div>
+      {/* Form to log neww photos */}
+      <div className="card-body logNewPhotoFormDiv">
+        <h5 className="text-center">Log your Photo!</h5>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label className="btn btn-primary">
+            <i className="fa fa-image"></i> Photo{" "}
+            <input
+              type="file"
+              name="upload"
+              id="upload"
+              style={{ display: "none" }}
+            />
+          </label>
+          <div id="previewFileName"></div>
+          <button className="button btn" type="submit" id="newImageSubmit">
+            <i className="fas fa-check"></i>
+          </button>
+          <span
+            className="button buttonCancel btn ml-1"
+            id="logNewPhotoFormCancelBtn"
+          >
+            <i className="fas fa-times"></i>
+          </span>
+        </form>
+      </div>
+
+      {/* Structure for recent photo logs */}
       <div className="row picturesWall" id="picturesCollage">
         <div className="col-12">
           <h4 className="text-center pt-3" id="picturesCollageHeading">
@@ -92,7 +119,7 @@ function PhotoLogs() {
   function showEventPicDiv() {
     const eventPicDiv = document.querySelector("#pictureDiv");
     eventPicDiv.style.visibility = "visible";
-    eventPicDiv.classList.add("flip-in-ver-left")
+    eventPicDiv.classList.add("flip-in-ver-left");
   }
 
   function hideEventPicDiv() {
