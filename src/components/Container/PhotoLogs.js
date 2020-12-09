@@ -2,7 +2,6 @@ import "../../style.css";
 
 function PhotoLogs() {
   return (
-    //   <div className="row mx-auto p-1 logNewPhotoForm" id="logNewPhotoFrame">
     <div>
         <div class="col-12 col-md-6 mx-auto">
             <div class="card-body logNewPhotoFormDiv">
@@ -16,7 +15,6 @@ function PhotoLogs() {
             </div>
         </div>
     </div>
-    
   )
 }
 
