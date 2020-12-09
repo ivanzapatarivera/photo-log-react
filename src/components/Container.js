@@ -1,4 +1,5 @@
 import "../style.css";
+import PhotoLogs from "./Container/PhotoLogs";
 import ProfilePicture from "./Container/ProfilePicture";
 
 function Container() {
@@ -6,6 +7,7 @@ function Container() {
     <div className="container mainContainer">
       <div className="row">
         <ProfilePicture />
+        <PhotoLogs />
       </div>
     </div>
   );

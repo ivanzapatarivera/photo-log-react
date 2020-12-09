@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PhotoLogs from '../Container/PhotoLogs'
+
 import "../../style.css";
 
 const ProfilePicture = () => {
@@ -65,7 +65,7 @@ const ProfilePicture = () => {
           </span>
         </form>
       </div>
-      <PhotoLogs />
+   
     </div>
   );
 }
