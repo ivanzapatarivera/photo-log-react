@@ -1,5 +1,4 @@
 import "../style.css";
-import LogNewPhoto from './Container/LogNewPhoto';
 import Profile from "./Container/ProfilePicture";
 import StatusUpdate from "./Container/StatusUpdate";
 import PhotoLogs from "./Container/PhotoLogs";

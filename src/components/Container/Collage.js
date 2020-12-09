@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "../../style.css";
 
 const Collage = () => {
-  const [data, setData] = useState(null);
+  const [API, setAPI] = useState(null);
   const fetchURL = "https://photo-logger.herokuapp.com";
-  const getData = () =>
+  const getAPI = () =>
     fetch(`${fetchURL}/log`).then((res) => res.json());
 
   useEffect(() => {
-    getData().then((data) => setData(data), console.log(data));
+    getAPI().then((API) => setAPI(API), console.log(API));
   }, []);
 
   return (
