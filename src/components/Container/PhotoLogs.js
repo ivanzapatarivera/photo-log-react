@@ -133,9 +133,11 @@ function PhotoLogs() {
 
   function closeLogNewPhotoFrame() {
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
+    const previewFileName = document.getElementById("previewFileName");
     if (logNewPhotoFrame.style.display === "flex") {
       logNewPhotoFrame.style.display = "none";
       logNewPhotoFrame.classList.remove("fade-in");
+      previewFileName.innerHTML = ""
     } else {
       logNewPhotoFrame.style.display = "flex";
       logNewPhotoFrame.classList.add("fade-in");
@@ -148,11 +150,9 @@ function PhotoLogs() {
     var uploadBtnArr = uploadBtn.value + "";
     uploadBtnArr = uploadBtnArr.split("\\");
     var i = uploadBtnArr.length - 1;
-    var fileName = uploadBtnArr[i];
-   
+    var fileName = uploadBtnArr[i];   
     console.log(uploadBtnArr);
-    console.log(fileName);
-    
+    console.log(fileName);    
     console.log(`You've selected this file: `, uploadBtn.value);
     previewFileName.innerText = `Would you like to upload ${fileName} ?`;
   }
