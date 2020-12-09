@@ -16,12 +16,9 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Body /> */}
     <Nav />
     <NavMobile />
-    <Container>
-
-    </ Container>
+    <Container />
     <Footer />
     <FooterMobile />
   </React.StrictMode>,
