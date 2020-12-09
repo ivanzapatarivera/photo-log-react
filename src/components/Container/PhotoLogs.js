@@ -6,9 +6,10 @@ function PhotoLogs() {
       <div
         class="row mx-auto p-1 logNewPhotoForm fade-in"
         id="logNewPhotoFrame"
+        style={{ display: "none" }}
       >
         {/* Form to log neww photos */}
-        <div class="col-12 col-md-6">
+        <div class="col-10 col-md-6">
           <div className="card-body col-12 col-md-8 mx-auto logNewPhotoFormDiv">
             <h5 className="text-center">Log your Photo!</h5>
             <form action="/upload" method="post" enctype="multipart/form-data">
@@ -18,6 +19,7 @@ function PhotoLogs() {
                   type="file"
                   name="upload"
                   id="upload"
+                  onChange={previewFileName}
                   style={{ display: "none" }}
                 />
               </label>
@@ -131,9 +133,28 @@ function PhotoLogs() {
 
   function closeLogNewPhotoFrame() {
     const logNewPhotoFrame = document.querySelector("#logNewPhotoFrame");
-    const previewFileName = document.querySelector("#logNewPhotoFrame");
-    logNewPhotoFrame.style.display = "none";
-    previewFileName.innerText = "";
+    if (logNewPhotoFrame.style.display === "flex") {
+      logNewPhotoFrame.style.display = "none";
+      logNewPhotoFrame.classList.remove("fade-in");
+    } else {
+      logNewPhotoFrame.style.display = "flex";
+      logNewPhotoFrame.classList.add("fade-in");
+    }
+  }
+
+  function previewFileName() {
+    var uploadBtn = document.getElementById("upload");
+    const previewFileName = document.getElementById("previewFileName");
+    var uploadBtnArr = uploadBtn.value + "";
+    uploadBtnArr = uploadBtnArr.split("\\");
+    var i = uploadBtnArr.length - 1;
+    var fileName = uploadBtnArr[i];
+   
+    console.log(uploadBtnArr);
+    console.log(fileName);
+    
+    console.log(`You've selected this file: `, uploadBtn.value);
+    previewFileName.innerText = `Would you like to upload ${fileName} ?`;
   }
 
   function showEventPicDiv() {
