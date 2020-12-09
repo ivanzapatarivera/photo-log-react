@@ -67,8 +67,6 @@ const Profile = () => {
           </span>
         </form>
       </div>
-      <StatusUpdate />
-      <PhotoLogs />
     </div>
   );
 }
