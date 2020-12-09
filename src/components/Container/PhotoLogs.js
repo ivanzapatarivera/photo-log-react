@@ -1,5 +1,5 @@
 import "../../style.css";
-import Collage from "./Collage";
+import Collage from './Collage'
 
 function PhotoLogs() {
   return (
@@ -51,8 +51,12 @@ function PhotoLogs() {
           <h4 className="text-center pt-3" id="picturesCollageHeading">
             Recent PhotoLogs
           </h4>
-
-          <Collage />
+          <div className="row p-3 mainCollageDIV" id="collageDivs">
+            <Collage />
+            {/* <!-- First DIV --> */}
+            
+            
+          </div>
         </div>
       </div>
 
@@ -61,7 +65,9 @@ function PhotoLogs() {
           class="col-12 col-md-12 mx-auto text-center fullScreenDiv"
           id="pictureDiv"
           onClick={hideEventPicDiv}
-        ></div>
+        >
+          
+        </div>
       </div>
     </div>
   );
@@ -72,7 +78,7 @@ function PhotoLogs() {
     if (logNewPhotoFrame.style.display === "flex") {
       logNewPhotoFrame.style.display = "none";
       logNewPhotoFrame.classList.remove("fade-in");
-      previewFileName.innerHTML = "";
+      previewFileName.innerHTML = ""
     } else {
       logNewPhotoFrame.style.display = "flex";
       logNewPhotoFrame.classList.add("fade-in");
@@ -85,9 +91,9 @@ function PhotoLogs() {
     var uploadBtnArr = uploadBtn.value + "";
     uploadBtnArr = uploadBtnArr.split("\\");
     var i = uploadBtnArr.length - 1;
-    var fileName = uploadBtnArr[i];
+    var fileName = uploadBtnArr[i];   
     console.log(uploadBtnArr);
-    console.log(fileName);
+    console.log(fileName);    
     console.log(`You've selected this file: `, uploadBtn.value);
     previewFileName.innerText = `Would you like to upload ${fileName} ?`;
   }

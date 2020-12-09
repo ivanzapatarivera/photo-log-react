@@ -45,7 +45,7 @@ const Profile = () => {
         <form
           action="/profilepic"
           method="post"
-          class="hidden col-10 col-md-6 mx-auto"
+          className="hidden col-10 col-md-6 mx-auto"
           id="form"
         >
           <input
@@ -53,22 +53,22 @@ const Profile = () => {
             name="URL"
             id="URL"
             placeholder="New profile picture's URL"
-            className="pl-3"
+            classNameName="pl-3"
           />
           <br />
           <button
-            class="button btn btn-primary"
+            className="button btn btn-primary"
             id="buttonSumbitProfilePicture"
             onClick={buttonClickedEventListener}
           >
-            <i class="fas fa-check"></i>
+            <i className="fas fa-check"></i>
           </button>
           <span
-            class="buttonCancel btn px-2 ml-1"
+            className="buttonCancel btn px-2 ml-1"
             id="buttonCancelProfilePicture"
             onClick={buttonClickedEventListener}
           >
-            <i class="fas fa-times"></i>
+            <i className="fas fa-times"></i>
           </span>
         </form>
       </div>

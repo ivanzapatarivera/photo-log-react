@@ -7,7 +7,7 @@ const Collage = () => {
   const getApi = () => fetch(`${fetchURL}/log`).then((res) => res.json());
 
   useEffect(() => {
-    getApi().then((api) => setApi(api), console.log("This is API: "));
+    getApi().then((api) => setApi(api));
   }, []);
 
   return (
@@ -23,7 +23,7 @@ const Collage = () => {
             />
           </div>
         ) : (
-          console.log(item)
+          console.log("yes")
         )
       )}
       <div className="col-5">
@@ -83,39 +83,65 @@ const Collage = () => {
         <div className="row">
           {/* <!-- Fifth DIV --> */}
           <div className="col-12 px-0">
-          {api?.map((item, index, array) =>
+            {api?.map((item, index, array) =>
               index === array.length - 2 ? (
-            <img
-              src={fetchURL + item.URL.split("..").join("")}
-              id="5fcf387a9b56b600158d470d"
-              onClick={showEventPicDiv}
-              className="collageImageDIV fifthDiv"
-            /> ):(console.log(item))
-              )}
+                <img
+                  src={fetchURL + item.URL.split("..").join("")}
+                  id="5fcf387a9b56b600158d470d"
+                  onClick={showEventPicDiv}
+                  className="collageImageDIV fifthDiv"
+                />
+              ) : (
+                console.log(item)
+              )
+            )}
           </div>
         </div>
         <div className="row">
           {/* <!-- Sixth DIV --> */}
           <div className="col-12 px-0">
-          {api?.map((item, index, array) =>
+            {api?.map((item, index, array) =>
               index === array.length - 1 ? (
-            <img
-              src={fetchURL + item.URL.split("..").join("")}
-              id="5fcf39529b56b600158d471c"
-              onClick={showEventPicDiv}
-              className="collageImageDIV sixthDiv"
-            /> ):(console.log(item))
-          )}
+                <img
+                  src={fetchURL + item.URL.split("..").join("")}
+                  id="5fcf39529b56b600158d471c"
+                  onClick={showEventPicDiv}
+                  className="collageImageDIV sixthDiv"
+                />
+              ) : (
+                console.log(item)
+              )
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 
-  function showEventPicDiv() {
-    const eventPicDiv = document.querySelector("#pictureDiv");
-    eventPicDiv.style.visibility = "visible";
-    eventPicDiv.classList.add("flip-in-ver-left");
+  function showEventPicDiv(event) {
+    fetch('https://photo-logger.herokuapp.com/log')
+    .then((res) => res.json('https://photo-logger.herokuapp.com/log'))
+    .then((data) => {
+      console.log("This is data: ", data)
+    })
+    // const eventPicDiv = document.querySelector("#pictureDiv");
+    // eventPicDiv.style.visibility = "visible";
+    // eventPicDiv.classList.add("flip-in-ver-left");
+    // var currentSrc = event.target.currentSrc;
+    // var id = event.target.id;
+    // var title = event.target.title;
+    // console.log(event)
+    
+    // var enlargedImage = `<img src=${currentSrc} id=${currentSrc} class="col-12 col-md-10 enlargedImage vertical-center">
+    //                     <div id="caption" class="caption mt-0">${title}
+    //                       <button onClick="delete" data-id=${id} class="delete buttonCancel ml-3">
+    //                         <i class="far fa-trash-alt delete" data-id=${id}></i>
+    //                       </button>
+    //                     </div>`;
+    // if (eventPicDiv) {
+    //   eventPicDiv.innerHTML = enlargedImage;
+    // }
+
   }
 };
 export default Collage;
