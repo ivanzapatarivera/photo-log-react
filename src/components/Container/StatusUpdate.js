@@ -39,7 +39,27 @@ const StatusUpdate = () => {
         </button>
       </div>
     </div>
-  );
+  )
+
+  // This section will display the status box
+  const statusBtn = document.querySelector("#postStatusBtn");
+  const buttonSubmit = document.querySelector("#buttonSubmitStatus");
+  const buttonCancel = document.querySelector("#buttonCancelStatus");
+  showHideStatusBox();
+  function showHideStatusBox() {
+    statusBtn.addEventListener("click", () => {
+      statusBox.style.display = "flex";
+      statusBox.classList.add("scale-in-center");
+    });
+    buttonSubmit.addEventListener("click", () => {
+      statusBox.style.display = "none";
+      statusBox.classList.remove("scale-in-center");
+    });
+    buttonCancel.addEventListener("click", () => {
+      statusBox.style.display = "none";
+      statusBox.classList.remove("scale-in-center");
+    });
+  }
 };
 
 export default StatusUpdate;

@@ -95,7 +95,7 @@ const Profile = () => {
     }
   }
 
-  // Event Listener to close div when clicking on cancel button
+  // Event handler to close div when clicking on cancel button
   function buttonClickedEventListener(e) {
     const profilePictureUpdateForm = document.querySelector("#newProfilePic");
     e.preventDefault(e);
