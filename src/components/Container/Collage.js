@@ -17,7 +17,7 @@ const Collage = () => {
           <div className="col-3 px-0">
             <img
               src={fetchURL + item.URL.split("..").join("")}
-              id="5fce6905879a4c0015d5a2db"
+              id={item._id}
               onClick={showEventPicDiv}
               className="collageImageDIV firstDiv"
             />
@@ -34,7 +34,7 @@ const Collage = () => {
               <div className="col-12 px-0">
                 <img
                   src={fetchURL + item.URL.split("..").join("")}
-                  id="5fce6aa7879a4c0015d5a2ea"
+                  id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV secondDiv"
                 />
@@ -52,7 +52,7 @@ const Collage = () => {
               index === array.length - 4 ? (
                 <img
                   src={fetchURL + item.URL.split("..").join("")}
-                  id="5fce6ae1879a4c0015d5a2f5"
+                  id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV thirdDiv"
                 />
@@ -68,7 +68,7 @@ const Collage = () => {
               index === array.length - 3 ? (
                 <img
                   src={fetchURL + item.URL.split("..").join("")}
-                  id="5fcf37ee9b56b600158d46f7"
+                  id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV fourthDiv"
                 />
@@ -87,7 +87,7 @@ const Collage = () => {
               index === array.length - 2 ? (
                 <img
                   src={fetchURL + item.URL.split("..").join("")}
-                  id="5fcf387a9b56b600158d470d"
+                  id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV fifthDiv"
                 />
@@ -104,7 +104,7 @@ const Collage = () => {
               index === array.length - 1 ? (
                 <img
                   src={fetchURL + item.URL.split("..").join("")}
-                  id="5fcf39529b56b600158d471c"
+                  id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV sixthDiv"
                 />
