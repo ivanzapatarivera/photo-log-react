@@ -19,7 +19,7 @@ function Timeline() {
                 ></i>
               </span>
             </span>
-            <p className="statusText pt-2 mr-2" style={{width: "100%"}} data-id="5fcf169b4c7f130015840131">
+            <p className="statusText pt-2 mr-2" data-id="5fcf169b4c7f130015840131">
               Posted pictures of my recent trip to Kyoto, Japan. Hope you like
               the pics!
             </p>
