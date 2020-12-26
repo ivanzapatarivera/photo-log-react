@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 import reportWebVitals from "./reportWebVitals";
+import Frame from './components/Container/Container';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Container>
+    <Frame>
 
-    </Container>    
+    </Frame>    
   </React.StrictMode>,
   document.getElementById("root")
 );
