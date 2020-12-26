@@ -12,7 +12,7 @@ function Timeline() {
           >
             <span style={{fontSize: ".8rem"}}>
               Created on: 12/08/2020 @06:00:59
-              <span onclick="delete" className="delete">
+              <span className="delete">
                 <i
                   className="far fa-trash-alt text-right delete"
                   data-id="5fcf169b4c7f130015840131"

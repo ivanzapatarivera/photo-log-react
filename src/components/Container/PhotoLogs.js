@@ -5,15 +5,15 @@ function PhotoLogs() {
   return (
     <div>
       <div
-        class="row mx-auto p-1 logNewPhotoForm fade-in"
+        className="row mx-auto p-1 logNewPhotoForm fade-in"
         id="logNewPhotoFrame"
         style={{ display: "none" }}
       >
         {/* Form to log neww photos */}
-        <div class="col-10 col-md-6">
+        <div className="col-10 col-md-6">
           <div className="card-body col-12 col-md-8 mx-auto logNewPhotoFormDiv">
             <h5 className="text-center">Log your Photo!</h5>
-            <form action="/upload" method="post" enctype="multipart/form-data">
+            <form action="/upload" method="post" encType="multipart/form-data">
               <label className="btn btn-primary">
                 <i className="fa fa-image"></i> Photo{" "}
                 <input
@@ -60,9 +60,9 @@ function PhotoLogs() {
         </div>
       </div>
 
-      <div class="row">
+      <div className="row">
         <div
-          class="col-12 col-md-12 mx-auto text-center fullScreenDiv"
+          className="col-12 col-md-12 mx-auto text-center fullScreenDiv"
           id="pictureDiv"
           onClick={hideEventPicDiv}
         >

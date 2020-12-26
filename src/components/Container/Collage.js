@@ -3,27 +3,30 @@ import "../../style.css";
 
 const Collage = () => {
   const [api, setApi] = useState(null);
-  const fetchURL = "https://photo-logger.herokuapp.com";
-  const getApi = () => fetch(`${fetchURL}/log`).then((res) => res.json());
-
+  const fetchURLCollage = "https://photo-logger.herokuapp.com";
+  const getApi = () => fetch(`${fetchURLCollage}/log`).then(
+    (res) => res.json());
+  
   useEffect(() => {
     getApi().then((api) => setApi(api));
   }, []);
 
+  
   return (
     <div className="row p-3 mainCollageDIV" id="collageDivs">
       {api?.map((item, index, array) =>
         index === array.length - 6 ? (
+          
           <div className="col-3 px-0">
             <img
-              src={fetchURL + item.URL.split("..").join("")}
+              src={fetchURLCollage + item.URL.split("..").join("")}
               id={item._id}
               onClick={showEventPicDiv}
               className="collageImageDIV firstDiv"
             />
           </div>
         ) : (
-          console.log("yes")
+          console.log("...")
         )
       )}
       <div className="col-5">
@@ -33,7 +36,7 @@ const Collage = () => {
               {/* <!-- Second DIV --> */}
               <div className="col-12 px-0">
                 <img
-                  src={fetchURL + item.URL.split("..").join("")}
+                  src={fetchURLCollage + item.URL.split("..").join("")}
                   id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV secondDiv"
@@ -41,7 +44,7 @@ const Collage = () => {
               </div>
             </div>
           ) : (
-            console.log("yes")
+            console.log("...")
           )
         )}
 
@@ -51,13 +54,13 @@ const Collage = () => {
             {api?.map((item, index, array) =>
               index === array.length - 4 ? (
                 <img
-                  src={fetchURL + item.URL.split("..").join("")}
+                  src={fetchURLCollage + item.URL.split("..").join("")}
                   id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV thirdDiv"
                 />
               ) : (
-                console.log("yes")
+                console.log("...")
               )
             )}
           </div>
@@ -67,13 +70,13 @@ const Collage = () => {
             {api?.map((item, index, array) =>
               index === array.length - 3 ? (
                 <img
-                  src={fetchURL + item.URL.split("..").join("")}
+                  src={fetchURLCollage + item.URL.split("..").join("")}
                   id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV fourthDiv"
                 />
               ) : (
-                console.log("yes")
+                console.log("...")
               )
             )}
           </div>
@@ -86,13 +89,13 @@ const Collage = () => {
             {api?.map((item, index, array) =>
               index === array.length - 2 ? (
                 <img
-                  src={fetchURL + item.URL.split("..").join("")}
+                  src={fetchURLCollage + item.URL.split("..").join("")}
                   id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV fifthDiv"
                 />
               ) : (
-                console.log("yes")
+                console.log("...")
               )
             )}
           </div>
@@ -103,13 +106,13 @@ const Collage = () => {
             {api?.map((item, index, array) =>
               index === array.length - 1 ? (
                 <img
-                  src={fetchURL + item.URL.split("..").join("")}
+                  src={fetchURLCollage + item.URL.split("..").join("")}
                   id={item._id}
                   onClick={showEventPicDiv}
                   className="collageImageDIV sixthDiv"
                 />
               ) : (
-                console.log("yes")
+                console.log("...")
               )
             )}
           </div>

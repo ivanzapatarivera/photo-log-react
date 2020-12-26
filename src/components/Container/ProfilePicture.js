@@ -53,7 +53,7 @@ const Profile = () => {
             name="URL"
             id="URL"
             placeholder="New profile picture's URL"
-            classNameName="pl-3"
+            className="pl-3"
           />
           <br />
           <button
