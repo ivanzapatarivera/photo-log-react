@@ -4,8 +4,7 @@ import "../../style.css";
 const Collage = () => {
   const [api, setApi] = useState(null);
   const fetchURLCollage = "https://photo-logger.herokuapp.com";
-  const getApi = () => fetch(`${fetchURLCollage}/log`).then(
-    (res) => res.json());
+  const getApi = () => fetch(`${fetchURLCollage}/log`).then((res) => res.json());
   
   useEffect(() => {
     getApi().then((api) => setApi(api));
@@ -26,7 +25,7 @@ const Collage = () => {
             />
           </div>
         ) : (
-          console.log("...")
+          []
         )
       )}
       <div className="col-5">
@@ -44,7 +43,7 @@ const Collage = () => {
               </div>
             </div>
           ) : (
-            console.log("...")
+            []
           )
         )}
 
@@ -60,7 +59,7 @@ const Collage = () => {
                   className="collageImageDIV thirdDiv"
                 />
               ) : (
-                console.log("...")
+                []
               )
             )}
           </div>
@@ -76,7 +75,7 @@ const Collage = () => {
                   className="collageImageDIV fourthDiv"
                 />
               ) : (
-                console.log("...")
+                []
               )
             )}
           </div>
@@ -95,7 +94,7 @@ const Collage = () => {
                   className="collageImageDIV fifthDiv"
                 />
               ) : (
-                console.log("...")
+                []
               )
             )}
           </div>
@@ -112,7 +111,7 @@ const Collage = () => {
                   className="collageImageDIV sixthDiv"
                 />
               ) : (
-                console.log("...")
+                []
               )
             )}
           </div>
