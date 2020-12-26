@@ -8,9 +8,9 @@ import './style.css';
 
 function Frame() {
    return (
-        <div className="body">
+        <div className="frame">
             <div className="row">
-                <div className="col-12">
+                <div>
                    <Navigation />
                 </div>
             </div>

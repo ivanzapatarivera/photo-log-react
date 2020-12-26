@@ -7,8 +7,8 @@ const photoLogIcon = 'https://photo-logger.herokuapp.com/images/logo-nav.png';
 
 function Navigation() {
     return (
-        <nav className="navbar navbar-expand-lg">
-            <div className="container text-white">
+        <nav className="navbar container navbar-expand-lg">
+            <div className="text-white">
                 <a className="navbar-brand" href="/photo-log-react">
                     <img src={photoLogIcon} className="logo-nav" />
                 </a>
@@ -25,7 +25,7 @@ function Navigation() {
                                 <i className="fas fa-camera"></i> Log a Photo
                             </a>
                         </li> 
-        
+
                         {/* <li className="nav-item nav-link">
                             <div className="dropdown" id="locationsLoggedNavbarBtn">
                                 <div className="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

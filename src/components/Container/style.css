@@ -6,6 +6,7 @@ a:hover {
   color: white;
 }
 
-.body {
-  padding: 0;
+.frame {
+  background-color: red;
+  overflow: hidden;
 }
