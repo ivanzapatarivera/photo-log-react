@@ -27,7 +27,7 @@ const Profile = () => {
               <li>
                 {/* Obtaining URL of last item of the array */}
                 <img
-                  src={item.URL}
+                  src={fetchURL + item.URL.split('..').join('')}
                   className="profilepic profilePicture"
                   id="profilePicture"
                 />
