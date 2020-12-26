@@ -5,6 +5,12 @@ const Collage = () => {
   const [api, setApi] = useState(null);
   const fetchURLCollage = "https://photo-logger.herokuapp.com";
   const getApi = () => fetch(`${fetchURLCollage}/log`).then((res) => res.json());
+
+  consoleLogAPI();
+  function consoleLogAPI() {
+    fetch(fetchURLCollage + '/log').then((res) => console.log(res.json()))
+  }
+
   
   useEffect(() => {
     getApi().then((api) => setApi(api));
@@ -14,8 +20,7 @@ const Collage = () => {
   return (
     <div className="row p-3 mainCollageDIV" id="collageDivs">
       {api?.map((item, index, array) =>
-        index === array.length - 6 ? (
-          
+        index === array.length - 6 ? (          
           <div className="col-3 px-0">
             <img
               src={fetchURLCollage + item.URL.split("..").join("")}
