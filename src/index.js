@@ -7,8 +7,7 @@ import Frame from './components/Container/Container';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Frame>
-
+    <Frame>    
     </Frame>    
   </React.StrictMode>,
   document.getElementById("root")
