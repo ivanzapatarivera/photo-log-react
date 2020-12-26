@@ -1,26 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from './App';
-
-// Webpage Components
-// import Body from "./components/Body";
-// import Container from "./components/Container"
-import Nav from "./components/Nav";
-import NavMobile from "./components/NavMobile";
-import Container from './components/Container'
-import Footer from "./components/Footer";
-import FooterMobile from "./components/FooterMobile";
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nav />
-    <NavMobile />
-    <Container />
-    <Footer />
-    <FooterMobile />
+    
   </React.StrictMode>,
   document.getElementById("root")
 );
