@@ -1,3 +1,11 @@
+a {
+  color: rgb(231, 229, 229);
+}
+
+a:hover {
+  color: white;
+}
+
 .body {
-    padding: 0;
+  padding: 0;
 }
