@@ -4,7 +4,7 @@
 
 ## Description 
  
-PhotoLog React is a React app that will allow the user to log their pictures and automatically organize albums by location.
+PhotoLog React is a React app on development that will allow the user to log their pictures and automatically organize albums by location.
 
 
 ## Table of Contents 
@@ -61,7 +61,7 @@ This repository is hosted in GitHub and you may access it at [https://github.com
 
 ## URL 
  
-[PhotoLog on React](https://photo-logger-react.herokuapp.com/) 
+PhotoLog on React is currently on development and isn't deployed for viewage/usage.
 
 
 ## Questions 
@@ -69,8 +69,3 @@ This repository is hosted in GitHub and you may access it at [https://github.com
 GitHub: [johnsbrook](https://github.com/johnsbrook) 
  
 Email: [ivan.zapata.rivera@gmail.com](mailto:ivan.zapata.rivera@gmail.com)
-
-## Screenshot 
- 
-![Getting Started](./src/images/screenshot.png) 
- 
