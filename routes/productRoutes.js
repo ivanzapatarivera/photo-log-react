@@ -1,19 +1,26 @@
 const mongoose = require('mongoose');
-const Product = mongoose.model('products', );
+const ProfilePic = require("../models/profilepic");
 
 module.exports = (app) => {
 
   app.get(`/api/product`, async (req, res) => {
-    let products = await Product.find();
+    let products = await ProfilePic.find();
     return res.status(200).send(products);
   });
 
-  app.post(`/api/product`, async (req, res) => {
-    let product = await Product.create(req.body);
-    return res.status(201).send({
-      error: false,
-      product
+  app.post(`/api/product`, ({body}, res) => {
+    ProfilePic
+    .create(body)
+    .then((res) => res.json())
+    .catch((err) => {
+      res.json(err);
     })
+  
+    // let product = await Product.create(req.body);
+    // return res.status(201).send({
+    //   error: false,
+    //   product
+    // })
   })
 
   app.put(`/api/product/:id`, async (req, res) => {
