@@ -15,7 +15,7 @@ mongoose.connect(
 
 app.use(bodyParser.json());
 
-// Importing productRoutes
+// Importing productRoutes - functional on Live app
 require("./routes/productRoutes")(app);
 
 app.use(express.static(path.join(__dirname, "client/build")));
