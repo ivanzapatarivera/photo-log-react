@@ -17,10 +17,12 @@ require('./routes/productRoutes')(app);
 
 
   const path = require('path');
-  app.use(express.static(path.join(__dirname, './client/build')));
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('*', (req,res) => {
-      res.sendFile(path.join(__dirname, './client/build/index.html'))
+    const index = path.join(__dirname, 'client', 'build', 'index.html');
+    res.sendFile(index);
+      // res.sendFile(path.join(__dirname, './client/build/index.html'))
   })
 
 
