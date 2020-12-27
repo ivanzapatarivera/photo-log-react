@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ProductForm from "./components/Form";
 
 // SERVICES
 import productService from './services/productService';
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <ProductForm />
       <ul className="list">
         {(products && products.length > 0) ? (
           products.map(product => renderProduct(product))
