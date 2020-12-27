@@ -32,6 +32,9 @@ export default class ProductForm extends Component {
             }
         })
         .then(res.json())
+        .catch((err) => {
+            res.json(err)
+        })
     }
 
     render() {
