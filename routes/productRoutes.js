@@ -8,13 +8,15 @@ module.exports = (app) => {
     return res.status(200).send(products);
   });
 
-  app.post(`/api/product`, ({body}, res) => {
-    ProfilePic
-    .create(body)
-    .then((res) => res.json())
-    .catch((err) => {
-      res.json(err);
-    })
+  app.post(`/api/product`, async ({body}, res) => {
+    // ProfilePic
+    // .create(body)
+    // .then((res) => res.json())
+    // .catch((err) => {
+    //   res.json(err);
+    // }) 
+    let product = await ProfilePic.create(body)
+    return res => res.json().send({ product })
   
     // let product = await Product.create(req.body);
     // return res.status(201).send({

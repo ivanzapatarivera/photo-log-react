@@ -40,9 +40,9 @@ export default class ProductForm extends Component {
     render() {
         return (
             <form onSubmit={this.postProduct.bind(this)}> 
-                <label for="title">Product Name: </label><br />
+                <label>Product Name: </label><br />
                     <input type="text" name="title" placeholder="Enter product name" onChange={this.onChangeHandler} /><br />
-                <label for="description">Product Description: </label>
+                <label>Product Description: </label>
                     <input type="text" name="description" placeholder="Enter product's description" onChange={this.onChangeHandler} /><br />
                 <input type="submit" value="Submit" />
             </form>
