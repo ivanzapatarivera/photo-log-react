@@ -14,9 +14,9 @@ function App() {
   })
 
   const getProducts = async () => {
-    let res = await productService.getAll();
-    console.log(res);
-    setproducts(res);
+    let response = await productService.getAll();
+    console.log(response);
+    setproducts(response);
   }
 
   
