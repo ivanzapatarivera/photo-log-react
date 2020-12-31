@@ -19,6 +19,7 @@ function App() {
     setproducts(res);
   }
 
+  
   const renderProduct = product => {
     return (
       <li key={product._id} className="list__item product">
