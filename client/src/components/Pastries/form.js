@@ -52,6 +52,7 @@ export default class PastriesForm extends Component {
                     <input type="text" name="price" placeholder="How much will it cost?" /><br />
                 <label>Image Address: </label><br />
                     <input type="text" name="imageURL" placeholder="Do you have the address where the image is posted?" /><br />
+                <input type="submit" value="Add Pastry to Menu" />
             </form>
         )
     }
