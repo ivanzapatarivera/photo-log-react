@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ProductForm from "./components/Form";
+import pastriesForm from './components/Pastries/form';
+import pastriesService from './services/pastriesService';
 
-// SERVICES
-import productService from './services/productService';
+
 
 function App() {
   const [products, setproducts] = useState(null);
@@ -31,16 +31,7 @@ function App() {
 
   return (
     <div className="App">
-
-      
-      {/* <ProductForm />
-      <ul className="list">
-        {(products && products.length > 0) ? (
-          products.map(product => renderProduct(product))
-        ) : (
-          <p>No products found</p>
-        )}
-      </ul> */}
+      <Pastries />
     </div>
   );
 }
