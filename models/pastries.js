@@ -17,7 +17,7 @@ const pastries = new Schema({
   imageURL: {
     type: String,
     required: false,
-  },
+  }
 });
 
 const Pastries = mongoose.model("Pastries", pastries);
