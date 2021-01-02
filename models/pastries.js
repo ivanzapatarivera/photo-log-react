@@ -4,19 +4,19 @@ const Schema = mongoose.Schema;
 const pastries = new Schema({
   title: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
   price: {
     type: String,
-    required: true,
+    required: true
   },
   imageURL: {
     type: String,
-    required: false,
+    required: false
   }
 });
 

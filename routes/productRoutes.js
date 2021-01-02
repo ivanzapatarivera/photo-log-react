@@ -11,7 +11,10 @@ module.exports = (app) => {
 
   app.post(`/api/pastries`, async ({ body }, res) => {
     let pastries = await Pastries.create(body)
-    return res => res.json().send({ pastries })
+    return res => {
+      res.json().send({ pastries })
+      console.log(res.json())
+    }
   })
 
 
