@@ -20,12 +20,11 @@ function App() {
   const renderPastry = pastry => {
     return (
       <li key={pastry._id}>
-        <h5>{pastry.title}</h5>
-        <p>
+        <div style={{marginTop: "20px", fontWeight: "bold"}}>{pastry.title} <font style={{fontWeight: "normal"}}>${pastry.price}</font></div>
+        <div> 
           {pastry.description}<br />
-          {pastry.price}<br />
           {pastry.imageURL}<br />
-        </p>
+        </div>
       </li>
     )
   }
