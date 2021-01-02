@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import pastriesForm from './components/Pastries/form';
+import pastriesForm from './components/Pastries/Form';
 import pastriesService from './services/pastriesService';
 
 
