@@ -40,5 +40,19 @@ export default class pastriesForm extends Component {
             res.json(err)
         })
     }
-
+    render() {
+        return (
+            <form onSubmit={this.postPastries.bind(this)}>
+                <h3>Post Pastries for Your Coffee Shop</h3>
+                <label>Pastry's Name: </label><br />
+                    <input type="text" name="title" placeholder="What are you baking to make life sweeter?" /><br />
+                <label>Description: </label><br />
+                    <input type="text" name="description" placeholder="What's in your baked good?" /><br />
+                <label>Price: </label><br />
+                    <input type="text" name="price" placeholder="How much will it cost?" /><br />
+                <label>Image Address: </label><br />
+                    <input type="text" name="imageURL" placeholder="Do you have the address where the image is posted?" /><br />
+            </form>
+        )
+    }
 }
