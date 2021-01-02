@@ -1,39 +1,49 @@
 import React, { useState, useEffect } from "react";
-import pastriesForm from './components/Pastries/Form';
+import PastriesForm from './components/Pastries/Form';
 import pastriesService from './services/pastriesService';
 
-
-
 function App() {
-  const [products, setproducts] = useState(null);
+  const [pastry, setPastry] = useState(null);
 
   useEffect(() => {
-    if(!products) {
-      getProducts();
+    if(!pastry) {
+      getPastry();
     }
-  })
+  });
 
-  const getProducts = async () => {
-    let response = await productService.getAll();
+  const getPastry = async () => {
+    let response = await pastriesService.getAll();
     console.log(response);
-    setproducts(response);
+    setPastry(response);
   }
 
-  
-  const renderProduct = product => {
+  const renderPastry = pastry => {
     return (
-      <li key={product._id} className="list__item product">
-        <h3 className="product__name">{product.title}</h3>
-        <p className="product__description">{product.description}</p>
+      <li key={pastry._id}>
+        <h5>{pastry.title}</h5>
+        <p>
+          {pastry.description}<br />
+          {pastry.price}<br />
+          {pastry.imageURL}<br />
+        </p>
       </li>
-    );
-  };
+    )
+  }
 
-  return (
-    <div className="App">
-      <Pastries />
-    </div>
-  );
+  return(
+    <ul>
+      <PastriesForm />
+      {
+        (pastry && pastry.length > 0) ? 
+        (pastry.map(
+          pastry => renderPastry(pastry)
+        )) :
+        (
+          <p>No Pastries Have Been Logged</p>
+        )
+      }
+    </ul>
+  )
 }
 
 export default App;
