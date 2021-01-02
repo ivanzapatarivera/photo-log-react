@@ -21,5 +21,24 @@ export default class pastriesForm extends Component {
         console.log(this.state.price);
         console.log(this.state.imageURL);
     }
-    
+    postPastries(req, res) {
+        fetch('/api/pastries', {
+            method: 'post', 
+            body: JSON.stringify({
+                title: this.state.title, 
+                description: this.state.description, 
+                price: this.state.price, 
+                imageURL: this.state.imageURL 
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res.json())
+        .catch((err) => {
+            res.json(err)
+        })
+    }
+
 }
