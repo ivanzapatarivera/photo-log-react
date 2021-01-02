@@ -1,7 +1,19 @@
 const mongoose = require('mongoose');
 const ProfilePic = require("../models/profilepic");
+const Pastries = require("../models/pastries");
 
 module.exports = (app) => {
+
+  app.get(`/api/pastries`, async (req, res) => {
+    let pastries = await Pastries.find();
+    return res.status(200).send(pastries);
+  })
+
+  app.post(`/api/pastries`, async ({ body }, res) => {
+    let pastries = await Pastries.create(body)
+    return res => res.json().send({ pastries })
+  })
+
 
   app.get(`/api/product`, async (req, res) => {
     let products = await ProfilePic.find();
