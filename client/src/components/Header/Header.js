@@ -19,20 +19,22 @@ export default class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbar shadow">
         <div className="container d-flex justify-content-center align-items-end">
           <img src={logo} className="logo" alt="logo" />
           <div className="links d-flex">
-            <div className="mx-4 ml-5 profile" onClick={this.clickOnProfile}>
+            <div className="ml-5 px-4 profile" onClick={this.clickOnProfile}>
               <i class="far fa-user-circle"></i>
-              &emsp;Profile
+              &emsp;<span class="linkText">Profile</span>
             </div>
-            <div className="mx-4 logaphoto" onClick={this.clickOnLogAPhoto}>
+            <div className="px-4 logaphoto" onClick={this.clickOnLogAPhoto}>
             <i class="fas fa-camera"></i>
-                &emsp;Log a Photo</div>
-            <div className="mx-4 albums" onClick={this.clickOnAlbums}>
+                &emsp;<span class="linkText">Log a Photo</span>
+            </div>
+            <div className="px-4 albums" onClick={this.clickOnAlbums}>
             <i class="fas fa-map-marker-alt"></i>
-                &emsp;Albums</div>
+                &emsp;<span class="linkText">Albums</span>
+            </div>
           </div>
         </div>
       </nav>
