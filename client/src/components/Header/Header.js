@@ -3,16 +3,18 @@ import "./style.css";
 import logo from "./logo-nav.png";
 
 export default class Header extends Component {
-
-    
   render() {
     return (
-      <navbar className="navbar">
-          <div className="container">
-              <img src={logo} alt="logo" />
+      <nav className="navbar">
+        <div className="container d-flex justify-content-start align-items-end">
+          <img src={logo} className="logo" alt="logo" />
+          <div className="links d-flex">
+            <div className="mx-4 profile">Profile</div>
+            <div className="mx-4 logaphoto">Log a Photo</div>
+            <div className="mx-4 albums">Albums</div>
           </div>
-          
-      </navbar>
+        </div>
+      </nav>
     );
   }
 }
