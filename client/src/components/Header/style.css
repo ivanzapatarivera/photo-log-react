@@ -19,6 +19,7 @@
   display: none;
 }
 
+.logo:hover,
 .profile:hover,
 .logaphoto:hover,
 .albums:hover {
@@ -27,6 +28,8 @@
 
 .linkText:hover {
   text-decoration:underline;
+  text-emphasis: true;
+  color: white
 }
 
 .whitespace:hover,

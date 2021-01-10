@@ -5,6 +5,10 @@ import logo from "./logo-nav.png";
 
 export default class Header extends Component {
 
+    clickOnLogo = (e) => {
+        console.log(`You've clicked on`, e.target.id)
+    }
+
     clickOnProfile = (e) => {
         console.log(`You've clicked on`, e.target.innerText)
     }
@@ -21,7 +25,7 @@ export default class Header extends Component {
     return (
       <nav className="navbar shadow">
         <div className="container d-flex justify-content-center align-items-end">
-          <img src={logo} className="logo" alt="logo" />
+          <img src={logo} className="logo" id="logo" alt="logo" onClick={this.clickOnLogo} />
           <div className="links d-flex">
             <div className="ml-5 px-4 profile" onClick={this.clickOnProfile}>
               <i class="far fa-user-circle"></i>
