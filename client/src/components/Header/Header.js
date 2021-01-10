@@ -20,7 +20,7 @@ export default class Header extends Component {
   render() {
     return (
       <nav className="navbar">
-        <div className="container d-flex justify-content-start align-items-end">
+        <div className="container d-flex justify-content-center align-items-end">
           <img src={logo} className="logo" alt="logo" />
           <div className="links d-flex">
             <div className="mx-4 ml-5 profile" onClick={this.clickOnProfile}>
