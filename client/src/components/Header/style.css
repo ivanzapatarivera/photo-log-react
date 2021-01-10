@@ -11,3 +11,7 @@
 .links {
     height: 100%;
 }
+
+.profile:hover, .logaphoto:hover, .albums:hover {
+    cursor: pointer;
+}
