@@ -22,20 +22,9 @@ module.exports = (app) => {
   });
 
   app.post(`/api/product`, async ({ body }, res) => {
-    // ProfilePic
-    // .create(body)
-    // .then((res) => res.json())
-    // .catch((err) => {
-    //   res.json(err);
-    // })
+
     let product = await ProfilePic.create(body);
     return (res) => res.json().send({ product });
-
-    // let product = await Product.create(req.body);
-    // return res.status(201).send({
-    //   error: false,
-    //   product
-    // })
   });
 
   app.put(`/api/product/:id`, async (req, res) => {
