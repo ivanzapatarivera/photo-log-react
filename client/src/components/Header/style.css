@@ -27,9 +27,9 @@
 }
 
 .linkText:hover {
-  text-decoration:underline;
+  text-decoration: underline;
   text-emphasis: true;
-  color: white
+  color: white;
 }
 
 .whitespace:hover,
@@ -39,7 +39,7 @@
 }
 
 @media (min-width: 768px) {
-  .profile,
+  .profile, 
   .logaphoto,
   .albums {
     display: block;
