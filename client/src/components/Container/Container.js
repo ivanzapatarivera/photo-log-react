@@ -8,14 +8,15 @@ export default class Container extends Component {
         <div className="row">
           <div className="profilePicture col-12">
             <section>
-                <div className="row">
-                    <div className="col-md-4 col-12 image d-flex align-items-center justify-content-center">
-                        Image
-                    </div>
-                    <div className="col-md-8 col-12 description d-flex align-items-center ">
-                        Description
-                    </div>
+              <div className="row">
+                <div className="col-md-4 col-12 image d-flex align-items-center justify-content-center">
+                  Image
                 </div>
+                <div className="col-md-8 col-12 description">
+                  <p>Description<br />
+                  Another description</p>
+                </div>
+              </div>
             </section>
           </div>
         </div>

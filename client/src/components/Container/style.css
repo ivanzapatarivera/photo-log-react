@@ -1,47 +1,58 @@
 .contents {
-    height: 100%;
-    min-height: 100vh;
-    padding-top: 6em;
-    background-color: lightgray;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 6em;
+  background-color: lightgray;
 }
 
 .profilePicture {
-    background-color: teal;
-    width: 100vw;
-    /* height: 10em; */
+  background-color: teal;
+  width: 100vw;
 }
 
 .image {
-    background-color: blue;
+  background-color: blue;
+  height: 15em;
 }
 
 .description {
-    background-color: pink;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 
-.image, .description {
-    padding: 2em;
-    height: 15em;
+.image,
+.description {
+  padding: 2em;
+}
+
+@media (max-width: 767px) {
+  .description {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .newUpdateMessage {
-    background-color: red;
-    width: 100vw;
-    margin-top: 1em;
-    height: 2.5em;
+  background-color: red;
+  width: 100vw;
+  margin-top: 1em;
+  height: 2.5em;
 }
 
 .gallery {
-    background-color: orange;
-    width: 100vw;
-    margin-top: 1em;
-    height: 10em;
+  background-color: orange;
+  width: 100vw;
+  margin-top: 1em;
+  height: 10em;
 }
 
 .updateMessages {
-    background-color: purple;
-    width: 100vw;
-    margin-top: 1em;
-    height: auto;
-    min-height: 25em;
+  background-color: purple;
+  width: 100vw;
+  margin-top: 1em;
+  height: auto;
+  min-height: 25em;
 }
