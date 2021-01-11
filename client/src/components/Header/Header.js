@@ -21,7 +21,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar shadow">
+      <nav className="navbar sticky-top shadow">
         <div className="container d-flex justify-content-center align-items-end">
           <img
             src={logo}
