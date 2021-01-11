@@ -3,3 +3,32 @@
     min-height: 100vh;
     padding-top: 6em;
 }
+
+.profilePicture {
+    background-color: teal;
+    width: 100vw;
+    height: 10em;
+}
+
+.newUpdateMessage {
+    background-color: red;
+    width: 100vw;
+    margin-top: 1em;
+    height: 2.5em;
+}
+
+.gallery {
+    background-color: orange;
+    width: 100vw;
+    margin-top: 1em;
+    height: 10em;
+
+}
+
+.updateMessages {
+    background-color: purple;
+    width: 100vw;
+    margin-top: 1em;
+    height: auto;
+    min-height: 25em;
+}
