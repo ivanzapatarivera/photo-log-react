@@ -17,7 +17,7 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <footer className="footer fixed-bottom">
+      <footer className="footer">
         <div className="d-flex justify-content-center align-items-end">
           <div className="links d-flex">
             <div className="pr-4 profileFooter" onClick={this.clickOnProfile}>

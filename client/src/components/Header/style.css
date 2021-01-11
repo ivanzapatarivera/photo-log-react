@@ -3,7 +3,10 @@ body {
 }
 
 .navbar {
+  position: fixed;
   margin: 0px;
+  left: 0px;
+  top: 0px;
   width: 100vw;
   padding-top: 0.7em;
   padding-bottom: 0.7em;

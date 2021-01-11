@@ -1,11 +1,15 @@
 .footer {
   display: none;
+  position: fixed;
   margin: 0px;
+  left: 0px;
+  bottom: 0px;
   width: 100vw;
   padding-top: 1em;
   padding-bottom: 1em;
   background-color: #007cc7;
   height: auto;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
