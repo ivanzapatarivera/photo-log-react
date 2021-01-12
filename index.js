@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 // Importing models
 require("./models/profilepic");
+require("./models/status"); 
 
 // Establishing mongoDB connection
 mongoose.Promise = global.Promise;
