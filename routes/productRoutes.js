@@ -3,6 +3,7 @@ const ProfilePic = require("../models/profilepic");
 const Pastries = require("../models/pastries");
 // const { default: Status } = require("../client/src/components/Forms/Status");
 const StatusUpdate = require("../models/status");
+const Description = require("../models/description");
 
 module.exports = (app) => {
 
@@ -15,6 +16,19 @@ module.exports = (app) => {
     let status = await StatusUpdate.create(body);
     return (res) => {
       res.json().send({ status });
+      console.log(res.json());
+    };
+  });
+
+  app.get(`/api/description`, async (req, res) => {
+    let description = await Description.find();
+    return res.status(200).send(description);
+  });
+
+  app.post(`/api/description`, async ({ body }, res) => {
+    let description = await Description.create(body);
+    return (res) => {
+      res.json().send({ description });
       console.log(res.json());
     };
   });
