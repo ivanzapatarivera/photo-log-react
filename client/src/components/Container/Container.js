@@ -4,7 +4,8 @@ import Description from "../Description/Description";
 import "./style.css";
 
 // Importing Forms
-import Status from "../Forms/Status";
+import StatusForm from "../Forms/Status/Status";
+import DescriptionForm from "../Forms/Description/Description";
 
 export default class Container extends Component {
   render() {
@@ -42,7 +43,8 @@ export default class Container extends Component {
           </div>
         </div>
         <div>
-          <Status />
+          <StatusForm />
+          <DescriptionForm />
         </div>
       </div>
     );
