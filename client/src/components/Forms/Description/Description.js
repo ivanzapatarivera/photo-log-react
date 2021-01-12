@@ -35,10 +35,20 @@ export default class DescriptionForm extends Component {
 
   render() {
     return (
-        <form onSubmit={this.postDescription.bind(this)}>
-            <input type="text" name="description" placeholder="Enter profile description." onChange={this.onChangeHandler} /><br />
-            <input type="submit" className="btn btn-primary mb-5" value="Update Description" />
-        </form>
-    )
+      <form onSubmit={this.postDescription.bind(this)}>
+        <input
+          type="text"
+          name="description"
+          placeholder="Enter profile description."
+          onChange={this.onChangeHandler}
+        />
+        <br />
+        <input
+          type="submit"
+          className="btn btn-primary mb-5"
+          value="Update Description"
+        />
+      </form>
+    );
   }
 }
