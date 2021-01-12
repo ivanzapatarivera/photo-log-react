@@ -1,8 +1,23 @@
 const mongoose = require("mongoose");
 const ProfilePic = require("../models/profilepic");
 const Pastries = require("../models/pastries");
+const { default: Status } = require("../client/src/components/Forms/Status");
 
 module.exports = (app) => {
+
+  app.get(`/api/status`, async (req, res) => {
+    let status = await Status.find();
+    return res.status(200).send(status);
+  });
+
+  app.post(`/api/status`, async ({ body }, res) => {
+    let status = await Status.create(body);
+    return (res) => {
+      res.json().send({ status });
+      console.log(res.json());
+    };
+  });
+
   app.get(`/api/pastries`, async (req, res) => {
     let pastries = await Pastries.find();
     return res.status(200).send(pastries);
