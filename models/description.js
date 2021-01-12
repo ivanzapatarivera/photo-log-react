@@ -8,7 +8,7 @@ const description = new Schema({
     },
     timestamp: {
         type: String, 
-        default: new Date.now
+        default: Date.now
     }
 })
 
