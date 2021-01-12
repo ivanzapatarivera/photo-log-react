@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class ProductForm extends Component {
+export default class StatusForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ export default class ProductForm extends Component {
         status: this.state.status,
       }),
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
     })
@@ -35,8 +35,6 @@ export default class ProductForm extends Component {
   render() {
     return (
       <form onSubmit={this.postStatus.bind(this)}>
-        <label>Status: </label>
-        <br />
         <input
           type="text"
           name="status"
@@ -44,7 +42,7 @@ export default class ProductForm extends Component {
           onChange={this.onChangeHandler}
         />
         <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Send Update" />
       </form>
     );
   }
