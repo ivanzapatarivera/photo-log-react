@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ProfileImage from "../ProfileImage/ProfileImage";
 import "./style.css";
 
 export default class Container extends Component {
@@ -10,7 +11,7 @@ export default class Container extends Component {
             <section>
               <div className="row">
                 <div className="col-md-4 col-12 image d-flex align-items-center justify-content-center">
-                  Image
+                  <ProfileImage />
                 </div>
                 <div className="col-md-8 col-12 description">
                   <p>Description<br />
