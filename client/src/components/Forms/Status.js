@@ -36,7 +36,7 @@ export default class Status extends Component {
   render() {
     return (
       <div id="statusForm" className="statusForm">
-        <form onSubmit={this.postStatus.bind(this)}>
+        <form onSubmit={this.postStatus.bind(this)} className="my-5">
           <textarea
             name="statusUpdate"
             id="statusUpdate"
@@ -44,8 +44,9 @@ export default class Status extends Component {
             rows="3"
             placeholder="What's on your mind?"
             className="px-3 py-1"
-          />
-          <input type="submit" value="Post Update" />
+          /><br />
+          <input type="submit" value="Post Update" class="btn btn-primary mb-5"/>
+          <button id="cancel" class="btn btn-secondary mb-5">Cancel</button>
         </form>
       </div>
     );
