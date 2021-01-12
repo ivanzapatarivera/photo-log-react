@@ -13,6 +13,7 @@
 .image {
   background-color: blue;
   height: 15em;
+  color: white;
 }
 
 .description {
@@ -37,6 +38,7 @@
 
 .newUpdateMessage {
   background-color: red;
+  color: white;
   width: 100vw;
   margin-top: 1em;
   height: 2.5em;
@@ -51,6 +53,7 @@
 
 .updateMessages {
   background-color: purple;
+  color: white;
   width: 100vw;
   margin-top: 1em;
   height: auto;
