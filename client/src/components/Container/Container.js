@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProfileImage from "../ProfileImage/ProfileImage";
+import Description from "../Description/Description";
 import "./style.css";
 
 export default class Container extends Component {
@@ -14,8 +15,7 @@ export default class Container extends Component {
                   <ProfileImage />
                 </div>
                 <div className="col-md-8 col-12 description">
-                  <p>Description<br />
-                  Another description</p>
+                  <Description />
                 </div>
               </div>
             </section>
