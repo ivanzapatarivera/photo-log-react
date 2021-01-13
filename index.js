@@ -25,9 +25,9 @@ app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
   const index = path.join(__dirname, "client", "build", "index.html");
   res.sendFile(index);
-});
+}); 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`app running on port http://localhost:${PORT}`);
 });
