@@ -1,5 +1,4 @@
 const logger = require("morgan");
-const nodemon = require("nodemon");
 const bodyParser = require("body-parser");
 
 // var Image = require('../models/imageupload.js');
