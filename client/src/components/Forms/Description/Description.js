@@ -17,6 +17,10 @@ export default class Description extends Component {
     console.log(e.target.value)
   }
 
+  onCancelHandler(e) {
+    console.log(e.target.innerText);
+  }
+
   postDescription(req, res) {
     fetch("/api/description", {
       method: "post",
@@ -46,7 +50,8 @@ export default class Description extends Component {
           onChange={this.onChangeHandler}
         />
         <br />
-        <input type="submit" value="Update" className="btn btn-primary shadow-sm" />
+        <input type="submit" value="Update Description" className="btn btn-primary shadow-sm" />
+        &emsp;<button className="btn btn-danger shadow-sm" onClick={this.onCancelHandler}>Cancel</button>
       </form>
     );
   }

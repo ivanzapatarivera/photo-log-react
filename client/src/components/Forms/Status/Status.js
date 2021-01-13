@@ -15,6 +15,10 @@ export default class StatusForm extends Component {
     });
   }
 
+  onCancelHandler(e) {
+    console.log(e.target.innerText);
+  }
+
   postStatus(req, res) {
     fetch("/api/status", {
       method: "post",
@@ -45,6 +49,7 @@ export default class StatusForm extends Component {
         />
         <br />
         <input type="submit" value="Send Update" className="btn btn-primary shadow-sm" />
+        &emsp;<button className="btn btn-danger shadow=sm" onClick={this.onCancelHandler}>Cancel</button>
       </form>
     );
   }
