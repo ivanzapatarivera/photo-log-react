@@ -7,10 +7,10 @@ const description = new Schema({
         required: true,
     },
     timestamp: {
-        type: String, 
+        type: Date, 
         default: Date.now
     }
 })
 
 const Description = mongoose.model("Description", description);
-module.exports = Description;
+module.exports = Description

@@ -23,7 +23,7 @@ module.exports = (app) => {
   app.get(`/api/description`, async (req, res) => {
     let description = await Description.find();
     return res.status(200).send(description);
-  });
+  })
 
   app.post(`/api/description`, async ({ body }, res) => {
     let description = await Description.create(body);

@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import "./style.css";
 
-export default class DescriptionForm extends Component {
+export default class Description extends Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = {
       description: "",
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    console.log(this.onChangeHandler.bind(this));
   }
 
   onChangeHandler(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    console.log(e.target.value)
   }
 
   postDescription(req, res) {
@@ -21,16 +22,16 @@ export default class DescriptionForm extends Component {
       method: "post",
       body: JSON.stringify({
         description: this.state.description,
-      }),
-      header: {
-        Accept: "application/json",
-        "Content-Type": "applicationjson",
+      }), 
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
       },
     })
-      .then(res.json())
-      .catch((err) => {
-        res.json(err);
-      });
+    .then(res.json())
+    .catch((err) => {
+      res.json(err);
+    })
   }
 
   render() {
@@ -39,15 +40,11 @@ export default class DescriptionForm extends Component {
         <input
           type="text"
           name="description"
-          placeholder="Enter profile description."
+          placeholder="Update profile description."
           onChange={this.onChangeHandler}
         />
         <br />
-        <input
-          type="submit"
-          className="btn btn-primary mb-5"
-          value="Update Description"
-        />
+        <input type="submit" value="Update" className="mb-5" />
       </form>
     );
   }
