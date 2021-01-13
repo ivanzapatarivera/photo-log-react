@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 require("./models/profilepic");
 require("./models/status"); 
 require("./models/description");
+// require("./models/imageupload");
 
 
 // Establishing mongoDB connection
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 
 // Importing productRoutes - functional on Live app
 require("./routes/productRoutes")(app);
+app.use(require("./routes/imageUpload"))
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {

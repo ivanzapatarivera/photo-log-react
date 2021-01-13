@@ -33,6 +33,8 @@ module.exports = (app) => {
     };
   });
 
+  
+
   app.get(`/api/pastries`, async (req, res) => {
     let pastries = await Pastries.find();
     return res.status(200).send(pastries);
