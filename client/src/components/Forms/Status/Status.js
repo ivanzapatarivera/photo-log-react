@@ -34,15 +34,17 @@ export default class StatusForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postStatus.bind(this)}>
-        <input
+      <form onSubmit={this.postStatus.bind(this)} className="my-5 text-center col-12">
+        <textarea
           type="text"
           name="status"
-          placeholder="Enter status "
+          placeholder="What's on your mind?"
+          className="col-6 mb-2"
+          style={{height: "4em"}}
           onChange={this.onChangeHandler}
         />
         <br />
-        <input type="submit" value="Send Update" />
+        <input type="submit" value="Send Update" className="btn btn-primary shadow-sm" />
       </form>
     );
   }
