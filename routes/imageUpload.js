@@ -45,12 +45,12 @@ const upload = multer({ storage });
 
 // Uploading images to albums
 app.post("/upload", upload.single("upload"), (req, res) => {
-  res.redirect("/");
+  console.log(res.json());
 });
 
 // Uploading images to profile pictures
 app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {
-  res.redirect("/");
+  console.log(res.json())
 })
 
 // JSON response of all images
