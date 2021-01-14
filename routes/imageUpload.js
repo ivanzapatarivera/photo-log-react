@@ -43,6 +43,7 @@ let storage = new GridFsStorage({
 
 const upload = multer({ storage });
 
+// Uploading images to albums
 app.post("/upload", upload.single("upload"), (req, res) => {
   res.redirect("/");
 });
@@ -52,6 +53,11 @@ app.get("/files", (req, res) => {
     console.log(res.json(files));
   });
 });
+
+// Uploading images to profile pictures
+app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {
+  location.reload(false)
+})
 
 app.get("/image/:filename", (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
