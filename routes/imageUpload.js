@@ -44,10 +44,14 @@ let storage = new GridFsStorage({
 const upload = multer({ storage });
 
 // Uploading images to albums
-app.post("/upload", upload.single("upload"), (req, res) => {});
+app.post("/upload", upload.single("upload"), (req, res) => {
+  res.redirect("/");
+});
 
 // Uploading images to profile pictures
-app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {})
+app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {
+  res.redirect("/");
+})
 
 // JSON response of all images
 app.get("/files", (req, res) => {
