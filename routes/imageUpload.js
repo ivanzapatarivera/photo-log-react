@@ -44,30 +44,29 @@ let storage = new GridFsStorage({
 const upload = multer({ storage });
 
 // Uploading images to albums
-app.post("/upload", upload.single("upload"), (req, res) => {
-  res.redirect("/");
-});
+app.post("/upload", upload.single("upload"), (req, res) => {});
 
+// Uploading images to profile pictures
+app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {})
+
+// JSON response of all images
 app.get("/files", (req, res) => {
   gfs.files.find({}).toArray((err, files) => {
     console.log(res.json(files));
   });
 });
 
-// Uploading images to profile pictures
-app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {
-  location.reload(false)
-})
-
+// Getting images by filename
 app.get("/image/:filename", (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
-    //check if files exist
+   
     if (!file || file.length == 0) {
       return res.status(404).json({
-        err: "No files exist",
+        err: "No file in database.",
       });
     }
-    //check if image
+    
+    // Validating if content type is image
     if (
       file.contentType === "image/jpeg" ||
       file.contentType === "img/jpeg" ||
@@ -78,12 +77,13 @@ app.get("/image/:filename", (req, res) => {
       file.contentType === "image/gif" ||
       file.contentType === "img/gif"
     ) {
-      //read output to browser
+
+      // Read output to browser
       const readStream = gfs.createReadStream(file.filename);
       readStream.pipe(res);
     } else {
       res.status(404).json({
-        err: "Not an image",
+        err: "Image type not supported.",
       });
     }
   });

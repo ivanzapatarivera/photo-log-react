@@ -22,6 +22,7 @@ class ReactUploadImage extends React.Component {
     axios
       .post("/upload", formData, config)
       .catch((error) => {});
+    window.location.reload();
   }
   onChange(e, filename, index, filenameArray) {
     this.setState({ file: e.target.files[0] });
@@ -32,6 +33,7 @@ class ReactUploadImage extends React.Component {
     
     const previewFileName = document.querySelector("#previewFileName");
     previewFileName.innerText = `Would you like to upload ${filename}?`
+    console.log(filename)
   }
 
   render() {
