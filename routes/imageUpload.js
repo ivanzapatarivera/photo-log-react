@@ -1,7 +1,6 @@
 const logger = require("morgan");
 const bodyParser = require("body-parser");
 
-// var Image = require('../models/imageupload.js');
 const express = require("express");
 const path = require("path");
 const crypto = require("crypto"); //to generate file name
@@ -26,7 +25,8 @@ conn.once("open", () => {
   gfs.collection("imageUpload");
 });
 
-const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/photo-log-react-images";
+const mongoURI =
+  process.env.MONGODB_URI || "mongodb://localhost/photo-log-react-images";
 
 let storage = new GridFsStorage({
   url: mongoURI,
@@ -49,9 +49,9 @@ app.post("/upload", upload.single("upload"), (req, res) => {
 
 app.get("/files", (req, res) => {
   gfs.files.find({}).toArray((err, files) => {
-    console.log(res.json(files))
-  })
-})
+    console.log(res.json(files));
+  });
+});
 
 app.get("/image/:filename", (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
@@ -62,7 +62,16 @@ app.get("/image/:filename", (req, res) => {
       });
     }
     //check if image
-    if (file.contentType === "image/jpeg" || file.contentType === "img/png" || file.contentType === "image/png") {
+    if (
+      file.contentType === "image/jpeg" ||
+      file.contentType === "img/jpeg" ||
+      file.contentType === "img/jpg" ||
+      file.contentType === "img/jpg" ||
+      file.contentType === "img/png" ||
+      file.contentType === "image/png" ||
+      file.contentType === "image/gif" ||
+      file.contentType === "img/gif"
+    ) {
       //read output to browser
       const readStream = gfs.createReadStream(file.filename);
       readStream.pipe(res);

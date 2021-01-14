@@ -38,12 +38,12 @@ export default class StatusForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postStatus.bind(this)} className="my-5 text-center col-12">
+      <form onSubmit={this.postStatus.bind(this)} className="my-5 mx-auto text-center col-12 col-md-4">
         <textarea
           type="text"
           name="status"
           placeholder="What's on your mind?"
-          className="col-6 mb-2"
+          className="col-12 mb-2"
           style={{height: "4em"}}
           onChange={this.onChangeHandler}
         />

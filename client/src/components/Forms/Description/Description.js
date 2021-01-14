@@ -40,12 +40,12 @@ export default class Description extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postDescription.bind(this)} className="mb-5 text-center col-12">
+      <form onSubmit={this.postDescription.bind(this)} className="mb-5 text-center mx-auto col-12 col-md-4">
         <textarea
           type="text"
           name="description"
           placeholder="Update profile description."
-          className="col-6"
+          className="col-12"
           style={{height: "4em"}}
           onChange={this.onChangeHandler}
         />
