@@ -21,10 +21,15 @@ class ReactUploadImage extends React.Component {
     };
     axios
       .post("/upload", formData, config)
-      .then(windows.location.reload())
+      .then(this.windowsReload)
       .catch((error) => {});
-    
+   
   }
+
+  windowsReload = () => {
+    window.location.reload();
+  }
+
   onChange(e, filename, index, filenameArray) {
     this.setState({ file: e.target.files[0] });
     filename = e.target.value
