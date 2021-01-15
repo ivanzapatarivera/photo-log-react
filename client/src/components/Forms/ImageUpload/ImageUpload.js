@@ -21,12 +21,12 @@ export default class ImageUpload extends React.Component {
     };
     axios
       .post("/upload", formData, config)
-      .then(this.windowsReload)
+      .then(this.windowReload)
       .catch((error) => {});
    
   }
 
-  windowsReload = () => {
+  windowReload = () => {
     window.location.reload();
   }
 
