@@ -1,3 +1,7 @@
 .profilePictureUploadForm {
     margin-bottom: 5em;
 }
+
+.profilePicturesInputBtn {
+    display: none;
+}
