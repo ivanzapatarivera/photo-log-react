@@ -1,7 +1,7 @@
 import React from "react";
 const axios = require("axios");
 
-class ReactUploadImage extends React.Component {
+export default class ImageUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,5 +58,3 @@ class ReactUploadImage extends React.Component {
     );
   }
 }
-
-export default ReactUploadImage;

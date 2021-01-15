@@ -6,7 +6,8 @@ import "./style.css";
 // Importing Forms
 import StatusForm from "../Forms/Status/Status";
 import DescriptionForm from "../Forms/Description/Description";
-import ReactUploadImage from "../Forms/ImageUpload/ImageUpload";
+import ImageUpload from "../Forms/ImageUpload/ImageUpload";
+import ProfilePictureUpload from "../Forms/ProfilePictureUpload/ProfilePictureUpload";
 
 export default class Container extends Component {
   render() {
@@ -46,7 +47,8 @@ export default class Container extends Component {
         <div>
           <StatusForm />
           <DescriptionForm />
-          <ReactUploadImage />
+          <ImageUpload />
+          <ProfilePictureUpload />
         </div>
       </div>
     );

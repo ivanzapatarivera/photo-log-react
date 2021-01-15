@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const ProfilePic = require("../models/profilepic");
+// const ProfilePic = require("../models/profilepic");
 const Pastries = require("../models/pastries");
 // const { default: Status } = require("../client/src/components/Forms/Status");
 const StatusUpdate = require("../models/status");
@@ -49,13 +49,13 @@ module.exports = (app) => {
   });
 
   app.get(`/api/product`, async (req, res) => {
-    let products = await ProfilePic.find();
+    let products = await Product.find();
     return res.status(200).send(products);
   });
 
   app.post(`/api/product`, async ({ body }, res) => {
 
-    let product = await ProfilePic.create(body);
+    let product = await Product.create(body);
     return (res) => res.json().send({ product });
   });
 
