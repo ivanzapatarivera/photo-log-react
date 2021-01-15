@@ -7,7 +7,7 @@ import "./style.css";
 import StatusForm from "../Forms/Status/Status";
 import DescriptionForm from "../Forms/Description/Description";
 import ImageUpload from "../Forms/ImageUpload/ImageUpload";
-import ProfilePictureUpload from "../Forms/ProfilePictureUpload/ProfilePictureUpload";
+import ProfilePictureUpload from "../Forms/ProfilePictureUpload/ProfilePictureUpload"
 
 export default class Container extends Component {
   render() {

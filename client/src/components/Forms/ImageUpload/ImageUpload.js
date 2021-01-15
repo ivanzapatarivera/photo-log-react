@@ -10,11 +10,11 @@ export default class ImageUpload extends React.Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
   }
-  onFormSubmit(e) {
+  onFormSubmit(e, formData, config) {
     e.preventDefault();
-    const formData = new FormData();
+    formData = new FormData();
     formData.append("upload", this.state.file);
-    const config = {
+    config = {
       headers: {
         "content-type": "multipart/form-data",
       },
@@ -30,16 +30,15 @@ export default class ImageUpload extends React.Component {
     window.location.reload();
   }
 
-  onChange(e, filename, index, filenameArray) {
+  onChange(e, filename, index, filenameArray, previewFileName) {
     this.setState({ file: e.target.files[0] });
     filename = e.target.value
     filenameArray = filename.split("\\")
     index = filenameArray.length - 1
     filename = filenameArray[index]
     
-    const previewFileName = document.querySelector("#previewFileName");
+    previewFileName = document.querySelector("#previewFileName");
     previewFileName.innerText = `Would you like to upload ${filename}?`
-    console.log(filename)
   }
 
   render() {

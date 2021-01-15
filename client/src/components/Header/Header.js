@@ -32,16 +32,16 @@ export default class Header extends Component {
           />
           <div className="links d-flex">
             <div className="ml-5 px-4 profile" onClick={this.clickOnProfile}>
-              <i class="far fa-user-circle"></i>
-              &emsp;<span class="linkText">Profile</span>
+              <i className="far fa-user-circle"></i>
+              &emsp;<span className="linkText">Profile</span>
             </div>
             <div className="px-4 logaphoto" onClick={this.clickOnLogAPhoto}>
-              <i class="fas fa-camera"></i>
-              &emsp;<span class="linkText">Log a Photo</span>
+              <i className="fas fa-camera"></i>
+              &emsp;<span className="linkText">Log a Photo</span>
             </div>
             <div className="px-4 albums" onClick={this.clickOnAlbums}>
-              <i class="fas fa-map-marker-alt"></i>
-              &emsp;<span class="linkText">Albums</span>
+              <i className="fas fa-map-marker-alt"></i>
+              &emsp;<span className="linkText">Albums</span>
             </div>
           </div>
         </div>
