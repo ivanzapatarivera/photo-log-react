@@ -31,8 +31,15 @@ export default class ProfilePictureUpload extends Component {
     window.location.reload();
   }
 
-  onChange(e) {
+  onChange(e, filename, index, filenameArray, previewProfilePictureFileName) {
     this.setState({ file: e.target.files[0] });
+    filename = e.target.value;
+    filenameArray = filename.split("\\");
+    index = filenameArray.length - 1;
+    filename = filenameArray[index];
+
+    previewProfilePictureFileName = document.querySelector("#previewProfilePictureFileName");
+    previewProfilePictureFileName.innerText = `Would you like to upload ${filename}?`;
   }
 
   render() {
@@ -54,6 +61,8 @@ export default class ProfilePictureUpload extends Component {
         </label>
         <div className="col-12 mx-auto">
             <button type="submit" className="btn btn-primary mb-2"><i class="fas fa-check"></i></button>
+            <button className="btn btn-danger mb-2"><i class="fas fa-times"></i></button><br />
+            <label id="previewProfilePictureFileName" className="col-12"></label>
         </div>
       </form>
     );

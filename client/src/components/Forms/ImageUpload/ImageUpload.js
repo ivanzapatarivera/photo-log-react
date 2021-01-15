@@ -62,7 +62,7 @@ export default class ImageUpload extends React.Component {
           <button type="submit" className="btn btn-primary mb-2">
           <i class="fas fa-check"></i>
           </button>
-          &emsp;<button className="btn btn-danger mb-2"><i class="far fa-window-close"></i></button>
+          &emsp;<button className="btn btn-danger mb-2"><i class="fas fa-times"></i></button>
           <br />
           <label id="previewFileName" className=""></label>
           <br />
