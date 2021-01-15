@@ -52,6 +52,9 @@ export default class ProfilePictureUpload extends Component {
             onChange={this.onChange}
           ></input>
         </label>
+        <div className="col-12 mx-auto">
+            <button type="submit" className="btn btn-primary mb-2"><i class="fas fa-check"></i></button>
+        </div>
       </form>
     );
   }
