@@ -4,6 +4,7 @@ const Pastries = require("../models/pastries");
 // const { default: Status } = require("../client/src/components/Forms/Status");
 const StatusUpdate = require("../models/status");
 const Description = require("../models/description");
+const LoggedPhoto = require("../models/loggedphoto");
 
 module.exports = (app) => {
 
