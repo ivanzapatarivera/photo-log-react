@@ -39,6 +39,11 @@ module.exports = (app) => {
       res.json().send({ loggedphoto });
       console.log(res.json());
     }
+  });
+
+  app.get(`/api/loggedphoto`, async (req, res) => {
+    let loggedphoto = await LoggedPhoto.find();
+    return res.status(200).send(loggedphoto);
   })
   
 
