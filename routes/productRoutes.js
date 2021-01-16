@@ -34,7 +34,7 @@ module.exports = (app) => {
     };
   });
 
-  app.post(`/api/loggedphoto`, async (req, res) => {
+  app.post(`/api/loggedphoto`, async ({ body }, res) => {
     let loggedphoto = await LoggedPhoto.create(body);
     return (res) => {
       res.json().send({ loggedphoto });

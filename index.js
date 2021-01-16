@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 require("./models/profilepic");
 require("./models/status"); 
 require("./models/description");
+require("./models/loggedphoto");
 
 // Establishing mongoDB connection
 mongoose.Promise = global.Promise;
