@@ -33,6 +33,13 @@ module.exports = (app) => {
     };
   });
 
+  app.post(`/api/loggedphoto`, async (req, res) => {
+    let loggedphoto = await LoggedPhoto.create(body);
+    return (res) => {
+      res.json().send({ loggedphoto });
+      console.log(res.json());
+    }
+  })
   
 
   app.get(`/api/pastries`, async (req, res) => {
