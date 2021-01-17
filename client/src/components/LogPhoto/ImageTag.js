@@ -17,16 +17,11 @@ export default function ImageTag() {
     setImageTag(res);
   };
 
-  // const renderImageTag = (imageTag) => {
-  //   console.log("This is image tag", imageTag);
-  //   <li>{imageTag}</li>;
-  // };
-
   return (
-    <ul>
+    <div className="px-1">
       {
         (imageTag) ? <img src={"/image/" + imageTag.filename} alt={imageTag.filename} className="imagePreview" /> : (<p>No Image</p>)
       }
-    </ul>
+    </div>
   );
 }
