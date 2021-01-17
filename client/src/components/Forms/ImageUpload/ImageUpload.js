@@ -23,17 +23,34 @@ export default class ImageUpload extends React.Component {
       .post("/upload", formData, config)
       .catch((req, res, error) => { res.json(error)});
     
-    this.onAPIChange();
+   this.onAPIChange() 
   }
 
-  onAPIChange(API, res) {
-    API = `/image`;
+  onAPIChange() {
+    const API = `/image`;
     fetch(API)
     .then((res) => res.json(API))
     .then((data) => {
-      console.log(data);
+      let initialDataLength = data.length;
+      this.validationAPI(initialDataLength, API);
     })
   }
+
+  validationAPI(initialDataLength, API) {
+    console.log("This is API", API)
+    console.log("This is initial data length", initialDataLength)
+    fetch(API)
+    .then((res) => res.json(API))
+    .then((data) => {
+      let newDataLength = data.length;
+      console.log("New Data Length before validation ", newDataLength)
+      if(newDataLength === initialDataLength) {
+        console.log("New data length is the same as initial data length.")
+        this.onAPIChange();
+      } else { console.log("Data length has changed to: ", newDataLength); window.location.replace("/LogPhoto")}
+    })
+  }
+ 
 
   onChange(e, filename, index, filenameArray, previewFileName) {
     this.setState({ file: e.target.files[0] });
