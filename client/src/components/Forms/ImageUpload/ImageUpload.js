@@ -12,6 +12,7 @@ export default class ImageUpload extends React.Component {
   }
   onFormSubmit(e, formData, config) {
     e.preventDefault();
+    this.onAPIChange() 
     formData = new FormData();
     formData.append("upload", this.state.file);
     config = {
@@ -23,7 +24,6 @@ export default class ImageUpload extends React.Component {
       .post("/upload", formData, config)
       .catch((req, res, error) => { res.json(error)});
     
-   this.onAPIChange() 
   }
 
   onAPIChange() {
@@ -44,10 +44,12 @@ export default class ImageUpload extends React.Component {
     .then((data) => {
       let newDataLength = data.length;
       console.log("New Data Length before validation ", newDataLength)
-      if(newDataLength === initialDataLength) {
+      if(newDataLength > initialDataLength) {
+        console.log("Data length has changed to: ", newDataLength); window.location.replace("/LogPhoto")
+      } else { 
         console.log("New data length is the same as initial data length.")
-        this.onAPIChange();
-      } else { console.log("Data length has changed to: ", newDataLength); window.location.replace("/LogPhoto")}
+        this.validationAPI(initialDataLength, API);
+      }
     })
   }
  
