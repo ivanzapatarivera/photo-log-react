@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ImageTag from "./ImageTag";
 import "./style.css";
 
 export default class LogPhoto extends Component {
@@ -51,12 +52,7 @@ export default class LogPhoto extends Component {
           <div className="col-12">
             <div className="row">
               <div className="col-12 col-md-5 d-flex align-items-center">
-                <img
-                  src="https://via.placeholder.com/350"
-                  alt="Placeholder Image"
-                  style={{ width: "100%", maxWidth: "25em", height: "auto" }}
-                  className="mx-auto"
-                />
+                <ImageTag />
               </div>
               <div className="col-12 col-md-7 d-flex align-items-center">
                 <form

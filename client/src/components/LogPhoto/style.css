@@ -1,3 +1,14 @@
 .logPhotoContainer {
     margin-top: 7em;
 }
+
+.imagePreview {
+    width: 100%;
+    height: auto;
+    border-radius: 1em 1em 1em 1em;
+    box-shadow: 0 0 1em lightgray;
+}
+
+ul {
+    list-style: none;
+}
