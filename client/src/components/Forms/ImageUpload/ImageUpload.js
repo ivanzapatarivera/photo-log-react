@@ -21,13 +21,19 @@ export default class ImageUpload extends React.Component {
     };
     axios
       .post("/upload", formData, config)
-      // .then(window.location.replace("/LogPhoto"))
       .catch((req, res, error) => { res.json(error)});
+    
+    this.onAPIChange();
   }
 
-  windowReload = () => {
-    window.location.reload();
-  };
+  onAPIChange(API, res) {
+    API = `/image`;
+    fetch(API)
+    .then((res) => res.json(API))
+    .then((data) => {
+      console.log(data);
+    })
+  }
 
   onChange(e, filename, index, filenameArray, previewFileName) {
     this.setState({ file: e.target.files[0] });

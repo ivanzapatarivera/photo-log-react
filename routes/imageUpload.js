@@ -54,11 +54,11 @@ app.post("/profilepictures", upload.single("profilepictures"), (req, res) => {
 })
 
 // JSON response of all images
-app.get("/files", (req, res) => {
-  gfs.files.find({}).toArray((err, files) => {
-    console.log(res.json(files));
-  });
-});
+// app.get("/files", (req, res) => {
+//   gfs.files.find({}).toArray((err, files) => {
+//     console.log(res.json(files));
+//   });
+// });
 
 // JSON response of all images
 app.get("/image", (req, res) => {
