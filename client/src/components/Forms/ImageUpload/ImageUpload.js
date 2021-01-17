@@ -21,7 +21,7 @@ export default class ImageUpload extends React.Component {
     };
     axios
       .post("/upload", formData, config)
-      .then(this.windowReload)
+      .then(window.location.replace("/LogPhoto"))
       .catch((error) => {});
   }
 

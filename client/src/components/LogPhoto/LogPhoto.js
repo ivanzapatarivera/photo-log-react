@@ -46,7 +46,7 @@ export default class LogPhoto extends Component {
         className="container logPhotoContainer"
         style={{ marginBottom: "7em", marginTop: "8.5em" }}
       >
-        <h4 className="text-center pt-3">Log Your Photo</h4>
+        <h4 className="text-center py-3">Log Your Photo</h4>
         <div className="row">
           <div className="col-12">
             <div className="row">
@@ -58,7 +58,7 @@ export default class LogPhoto extends Component {
                   className="mx-auto"
                 />
               </div>
-              <div className="col-12 col-md-7">
+              <div className="col-12 col-md-7 d-flex align-items-center">
                 <form
                   className="col-12 col-md-12 mx-auto"
                   onSubmit={this.onFormSubmit.bind(this)}

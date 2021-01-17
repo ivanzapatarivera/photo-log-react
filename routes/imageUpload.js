@@ -45,7 +45,7 @@ const upload = multer({ storage });
 
 // Uploading images to albums
 app.post("/upload", upload.single("upload"), (req, res) => {
-  res.redirect("/");
+  res.redirect("/LogPhoto");
 });
 
 // Uploading images to profile pictures
