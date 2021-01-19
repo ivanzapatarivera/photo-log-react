@@ -23,7 +23,7 @@ export default class Description extends Component {
           onMouseOut={this.handleOnMouseOut}
           onClick={this.handleOnClick}
         >
-          Description Component
+          <RenderDescription />
         </div>
       </div>
     );
