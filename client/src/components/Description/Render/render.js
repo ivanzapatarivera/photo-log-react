@@ -4,7 +4,6 @@ import "../style.css";
 
 export default function RenderDescription() {
   const [renderDescription, setRenderDescription] = useState(null);
-  console.log(descritionRenderService);
   useEffect(() => {
     if (!renderDescription) {
       getRenderDescription();
