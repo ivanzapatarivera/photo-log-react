@@ -27,13 +27,11 @@ export default function RenderStatus() {
   };
   return (
     <div>
-      <ul>
         {renderStatus ? (
           renderStatus.map((renderStatus) => handleRenderStatus(renderStatus))
         ) : (
           <p>There are no updates on your timeline.</p>
         )}
-      </ul>
     </div>
   );
 }
