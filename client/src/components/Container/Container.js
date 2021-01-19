@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProfileImage from "../ProfileImage/ProfileImage";
 import Description from "../Description/Description";
+import RenderStatus from "../Status/render";
 import "./style.css";
 
 // Importing Forms
@@ -40,7 +41,9 @@ export default class Container extends Component {
           </div>
           <div className="row">
             <div className="updateMessages col-12 d-flex justify-content-center">
-              <section>Messages with Updates</section>
+              <section>
+                <RenderStatus />
+              </section>
             </div>
           </div>
         </div>

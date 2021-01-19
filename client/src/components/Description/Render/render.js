@@ -12,7 +12,6 @@ export default function RenderDescription() {
 
   const getRenderDescription = async () => {
     let response = await descritionRenderService.getAll();
-    console.log(response);
     setRenderDescription(response);
   };
   return (
