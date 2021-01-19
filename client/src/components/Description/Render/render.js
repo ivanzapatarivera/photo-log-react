@@ -1,0 +1,28 @@
+import React, { useState, useEffect, Component } from "react"
+import descritionRenderService from "../../../services/descriptionRenderService";
+import "../style.css";
+
+export default function RenderDescription() {
+    const [ renderDescription, setRenderDescription ] = useState(null);  
+    console.log(descritionRenderService);
+    useEffect(() => {
+        if(!renderDescription) {
+            getRenderDescription();
+        }
+    });
+
+    const getRenderDescription = async () => {
+        let response = await descritionRenderService.getAll();
+        console.log(response)
+        setRenderDescription(response);
+    }
+    return (
+        <div>
+            {
+                (renderDescription) ? 
+                <p>{renderDescription.description}</p> :
+                (<p>Please, enter profile description</p>)
+            }
+        </div>
+    )
+}
