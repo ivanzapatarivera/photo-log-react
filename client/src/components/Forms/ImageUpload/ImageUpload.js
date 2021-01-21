@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
+import headerChange from "./headerChange";
 import "./style.css";
 const axios = require("axios");
 
-export default class ImageUpload extends React.Component {
+
+export default class ImageUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,18 +39,13 @@ export default class ImageUpload extends React.Component {
   }
 
   validationAPI(initialDataLength, API) {
-    console.log("This is API", API);
-    console.log("This is initial data length", initialDataLength);
     fetch(API)
       .then((res) => res.json(API))
       .then((data) => {
         let newDataLength = data.length;
-        console.log("New Data Length before validation ", newDataLength);
         if (newDataLength > initialDataLength) {
-          console.log("Data length has changed to: ", newDataLength);
           window.location.replace("/LogPhoto");
         } else {
-          console.log("New data length is the same as initial data length.");
           this.validationAPI(initialDataLength, API);
         }
       });
@@ -60,7 +57,6 @@ export default class ImageUpload extends React.Component {
     filenameArray = filename.split("\\");
     index = filenameArray.length - 1;
     filename = filenameArray[index];
-
     previewFileName = document.querySelector("#previewFileName");
     previewFileName.innerText = `Would you like to upload ${filename}?`;
   }
@@ -69,6 +65,10 @@ export default class ImageUpload extends React.Component {
     const imageUploadForm = document.querySelector("#imageUploadForm");
     imageUploadForm.style.display = "none";
     imageUploadForm.classList.remove("d-flex");
+  }
+
+  handleHeaderChange = (logPhotoContainer, logAPhoto) => {
+    console.log("handleHeaderChange read")
   }
 
   render() {

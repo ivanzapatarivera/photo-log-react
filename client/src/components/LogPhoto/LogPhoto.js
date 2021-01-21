@@ -46,6 +46,7 @@ export default class LogPhoto extends Component {
       <div
         className="container logPhotoContainer"
         style={{ marginBottom: "7em", marginTop: "8.5em" }}
+        id="logPhotoContainer"
       >
         <h4 className="text-center py-3">Log Your Photo</h4>
         <div className="row">
@@ -115,3 +116,4 @@ export default class LogPhoto extends Component {
     );
   }
 }
+

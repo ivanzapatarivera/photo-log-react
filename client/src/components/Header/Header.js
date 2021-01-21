@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import logo from "./logo-nav.png";
 
+
 export default class Header extends Component {
   clickOnLogo = (e) => {
     window.location.replace("/");
@@ -11,9 +12,8 @@ export default class Header extends Component {
     window.location.replace("/");
   };
 
-  clickOnLogAPhoto = (e) => {
-    // window.location.replace("/LogPhoto");
-    const imageUploadForm = document.querySelector("#imageUploadForm");
+  clickOnLogAPhoto = (e, imageUploadForm) => {
+    imageUploadForm = document.querySelector("#imageUploadForm");
     if(imageUploadForm.style.display == "none") {
       this.showImageUploadForm(imageUploadForm)
     } else {
@@ -51,7 +51,7 @@ export default class Header extends Component {
               <i className="far fa-user-circle"></i>
               &emsp;<span className="linkText">Profile</span>
             </div>
-            <div className="px-4 logaphoto" onClick={this.clickOnLogAPhoto}>
+            <div className="px-4 logaphoto" style={{display: "block"}} onClick={this.clickOnLogAPhoto} id="logAPhoto">
               <i className="fas fa-camera"></i>
               &emsp;<span className="linkText">Log a Photo</span>
             </div>
