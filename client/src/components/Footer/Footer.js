@@ -7,9 +7,25 @@ export default class Footer extends Component {
     console.log(`You've clicked on`, e.target.innerText);
   };
 
-  clickOnLogAPhoto = (e) => {
-    console.log(`You've clicked on`, e.target.innerText);
+  clickOnLogAPhoto = (imageUploadForm) => {
+    imageUploadForm = document.querySelector("#imageUploadForm");
+    if (imageUploadForm.style.display == "none") {
+      this.showImageUploadForm(imageUploadForm);
+    } else {
+      this.hideImageUploadForm(imageUploadForm);
+    }
   };
+
+  showImageUploadForm(imageUploadForm) {
+    imageUploadForm.style.display = "block";
+    imageUploadForm.classList.add("d-flex");
+  }
+
+  hideImageUploadForm(imageUploadForm) {
+    imageUploadForm.style.display = "none";
+    imageUploadForm.classList.remove("d-flex");
+  }
+  
 
   clickOnAlbums = (e) => {
     console.log(`You've clicked on`, e.target.innerText);
