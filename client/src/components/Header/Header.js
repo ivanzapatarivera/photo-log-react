@@ -22,11 +22,13 @@ export default class Header extends Component {
   };
 
   showImageUploadForm(imageUploadForm) {
-    imageUploadForm.style.display = "block"
+    imageUploadForm.style.display = "block";
+    imageUploadForm.classList.add("d-flex");
   }
 
   hideImageUploadForm(imageUploadForm) {
-    imageUploadForm.style.display = "none"
+    imageUploadForm.style.display = "none";
+    imageUploadForm.classList.remove("d-flex")
   }
 
   clickOnAlbums = (e) => {
