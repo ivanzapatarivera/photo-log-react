@@ -4,16 +4,30 @@ import logo from "./logo-nav.png";
 
 export default class Header extends Component {
   clickOnLogo = (e) => {
-    console.log(`You've clicked on`, e.target.id);
+    window.location.replace("/");
   };
 
   clickOnProfile = (e) => {
-    console.log(`You've clicked on`, e.target.innerText);
+    window.location.replace("/");
   };
 
   clickOnLogAPhoto = (e) => {
-    console.log(`You've clicked on`, e.target.innerText);
+    // window.location.replace("/LogPhoto");
+    const imageUploadForm = document.querySelector("#imageUploadForm");
+    if(imageUploadForm.style.display == "none") {
+      this.showImageUploadForm(imageUploadForm)
+    } else {
+      this.hideImageUploadForm(imageUploadForm)
+    }
   };
+
+  showImageUploadForm(imageUploadForm) {
+    imageUploadForm.style.display = "block"
+  }
+
+  hideImageUploadForm(imageUploadForm) {
+    imageUploadForm.style.display = "none"
+  }
 
   clickOnAlbums = (e) => {
     console.log(`You've clicked on`, e.target.innerText);

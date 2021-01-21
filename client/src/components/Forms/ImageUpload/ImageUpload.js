@@ -70,7 +70,8 @@ export default class ImageUpload extends React.Component {
       <form
         onSubmit={this.onFormSubmit}
         className="mb-5 text-center col-12 col-lg-4 p-1 mx-auto"
-        style={{ border: "1px solid lightgrey" }}
+        style={{ border: "1px solid lightgrey", display: "none" }}
+        id="imageUploadForm"
       >
         <h4>Upload a Picture</h4>
         <label className="btn btn-secondary col-12 col-md-6 mb-2 mx-auto">

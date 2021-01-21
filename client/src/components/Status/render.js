@@ -12,7 +12,6 @@ export default function RenderStatus() {
 
   const getRenderStatus = async () => {
     let response = await statusRenderService.getAll();
-    console.log(`Render status response`, response);
     setRenderStatus(response);
   };
 

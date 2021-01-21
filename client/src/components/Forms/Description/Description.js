@@ -7,7 +7,6 @@ export default class Description extends Component {
       description: "",
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
-    console.log(this.onChangeHandler.bind(this));
   }
 
   onChangeHandler(e) {
