@@ -13,8 +13,6 @@ export default class ProfileImage extends Component {
   handleOnClick = (e) => {
     const id = e.target.innerText;
     console.log(`You clicked on ${id}.`);
-    // const mainDiv = (e.target.parentNode.parentNode.parentNode.parentNode);
-    // mainDiv.style.backgroundColor = "red"
   };
 
   render() {

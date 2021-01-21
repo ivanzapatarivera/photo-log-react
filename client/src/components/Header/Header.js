@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import logo from "./logo-nav.png";
 
-
 export default class Header extends Component {
   clickOnLogo = (e) => {
     window.location.replace("/");
@@ -14,10 +13,10 @@ export default class Header extends Component {
 
   clickOnLogAPhoto = (e, imageUploadForm) => {
     imageUploadForm = document.querySelector("#imageUploadForm");
-    if(imageUploadForm.style.display == "none") {
-      this.showImageUploadForm(imageUploadForm)
+    if (imageUploadForm.style.display == "none") {
+      this.showImageUploadForm(imageUploadForm);
     } else {
-      this.hideImageUploadForm(imageUploadForm)
+      this.hideImageUploadForm(imageUploadForm);
     }
   };
 
@@ -28,14 +27,18 @@ export default class Header extends Component {
 
   hideImageUploadForm(imageUploadForm) {
     imageUploadForm.style.display = "none";
-    imageUploadForm.classList.remove("d-flex")
+    imageUploadForm.classList.remove("d-flex");
   }
 
   clickOnAlbums = (e) => {
     console.log(`You've clicked on`, e.target.innerText);
   };
 
+  hideLogAPhoto() {
+    console.log(document.querySelector("#logAPhoto"));
+  }
   render() {
+    this.hideLogAPhoto();
     return (
       <nav className="navbar sticky-top shadow">
         <div className="container d-flex justify-content-center align-items-end">
@@ -51,10 +54,20 @@ export default class Header extends Component {
               <i className="far fa-user-circle"></i>
               &emsp;<span className="linkText">Profile</span>
             </div>
-            <div className="px-4 logaphoto" style={{display: "block"}} onClick={this.clickOnLogAPhoto} id="logAPhoto">
-              <i className="fas fa-camera"></i>
-              &emsp;<span className="linkText">Log a Photo</span>
-            </div>
+            {window.location.pathname == "/LogPhoto" ? (
+              []
+            ) : (
+              <div
+                className="px-4 logaphoto"
+                style={{ display: "block" }}
+                onClick={this.clickOnLogAPhoto}
+                id="logAPhoto"
+              >
+                <i className="fas fa-camera"></i>
+                &emsp;<span className="linkText">Log a Photo</span>
+              </div>
+            )}
+
             <div className="px-4 albums" onClick={this.clickOnAlbums}>
               <i className="fas fa-map-marker-alt"></i>
               &emsp;<span className="linkText">Albums</span>

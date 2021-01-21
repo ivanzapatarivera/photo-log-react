@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import ImageTag from "./ImageTag";
 import "./style.css";
 
+
+
 export default class LogPhoto extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +44,9 @@ export default class LogPhoto extends Component {
   onCancelHandler() {
     window.location.replace("/");
   }
+
   render() {
+    
     return (
       <div
         className="container logPhotoContainer"
@@ -114,6 +119,7 @@ export default class LogPhoto extends Component {
         </div>
       </div>
     );
+    
   }
 }
 
