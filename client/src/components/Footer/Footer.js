@@ -24,10 +24,12 @@ export default class Footer extends Component {
               <i class="far fa-user-circle"></i>
               &nbsp;&nbsp;<span class="linkText">Profile</span>
             </div>
-            <div className="log4photoFooter" onClick={this.clickOnLogAPhoto}>
+            {(window.location.pathname == "/LogPhoto") ? [] : (
+              <div className="log4photoFooter" onClick={this.clickOnLogAPhoto}>
               <i class="fas fa-camera"></i>
               &nbsp;&nbsp;<span class="linkText">Log a Photo</span>
             </div>
+            )}
             <div className="pl-4 albumsFooter" onClick={this.clickOnAlbums}>
               <i class="fas fa-map-marker-alt"></i>
               &nbsp;&nbsp;<span class="linkText">Albums</span>
