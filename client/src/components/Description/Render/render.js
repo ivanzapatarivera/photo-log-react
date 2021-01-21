@@ -16,7 +16,7 @@ export default function RenderDescription() {
   };
   return (
     <div>
-      {renderDescription ? (
+      {(renderDescription) ? (
         <p>{renderDescription.description}</p>
       ) : (
         <p>Please, enter profile description</p>
