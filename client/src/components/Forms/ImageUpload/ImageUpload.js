@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import headerChange from "./headerChange";
 import "./style.css";
 const axios = require("axios");
 
