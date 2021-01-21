@@ -4,7 +4,7 @@ import logo from "../Header/logo-nav.png";
 
 export default class Footer extends Component {
   clickOnProfile = (e) => {
-    console.log(`You've clicked on`, e.target.innerText);
+    window.location.replace("/");
   };
 
   clickOnLogAPhoto = (imageUploadForm) => {
