@@ -14,6 +14,7 @@ export default class ProfilePictureUpload extends Component {
 
   onFormSubmit(e, res, formData, config) {
     e.preventDefault();
+    this.onAPIChange();
     formData = new FormData();
     formData.append("profilepictures", this.state.file);
     config = {
@@ -24,6 +25,29 @@ export default class ProfilePictureUpload extends Component {
       .then(this.windowReload)
       .catch((err) => {
         res.json(err);
+      });
+  }
+
+  onAPIChange() {
+    const API = `/image`;
+    fetch(API)
+      .then((res) => res.json(API))
+      .then((data) => {
+        let initialDataLength = data.length;
+        this.validationAPI(initialDataLength, API);
+      });
+  }
+
+  validationAPI(initialDataLength, API) {
+    fetch(API)
+      .then((res) => res.json(API))
+      .then((data) => {
+        let newDataLength = data.length;
+        if (newDataLength > initialDataLength) {
+          window.location.replace("/");
+        } else {
+          this.validationAPI(initialDataLength, API);
+        }
       });
   }
 
@@ -38,31 +62,47 @@ export default class ProfilePictureUpload extends Component {
     index = filenameArray.length - 1;
     filename = filenameArray[index];
 
-    previewProfilePictureFileName = document.querySelector("#previewProfilePictureFileName");
+    previewProfilePictureFileName = document.querySelector(
+      "#previewProfilePictureFileName"
+    );
     previewProfilePictureFileName.innerText = `Would you like to upload ${filename}?`;
+  }
+
+  onHandleCancelClick(profilePictureUploadForm) {
+    profilePictureUploadForm = document.querySelector("#profilePictureUploadForm");
+    profilePictureUploadForm.style.display = "none";
+    profilePictureUploadForm.classList.remove("d-flex");
   }
 
   render() {
     return (
       <form
         onSubmit={this.onFormSubmit}
-        className="col-12 col-lg-4 p-1 mx-auto text-center profilePictureUploadForm"
-        style={{ border: "1px solid lightgrey" }}
+        className="col-12 p-1 mx-auto text-center justify-content-center align-items-center profilePictureUploadForm"
+        style={{ border: "1px solid lightgrey", display: "none" }}
+        id="profilePictureUploadForm"
       >
-        <h4>Update Profile Picture</h4>
-        <label className="btn btn-secondary col-12 col-md-6 mb-2">
-          Select Photo
-          <input
-            type="file"
-            name="profilepictures"
-            className="profilePicturesInputBtn"
-            onChange={this.onChange}
-          ></input>
-        </label>
-        <div className="col-12 mx-auto">
-            <button type="submit" className="btn btn-primary mb-2"><i class="fas fa-check"></i></button>
-            <button className="btn btn-danger mb-2"><i class="fas fa-times"></i></button><br />
-            <label id="previewProfilePictureFileName" className="col-12"></label>
+        <div className="container">
+          <label className="btn btn-secondary col-12 col-md-6">
+            Select Photo
+            <input
+              type="file"
+              name="profilepictures"
+              className="profilePicturesInputBtn"
+              onChange={this.onChange}
+            ></input>
+          </label>
+          <br />
+          <div className="col-10 mx-auto">
+          <button type="submit" className="btn btn-primary mb-2 col-4 col-md-2">
+            <i class="fas fa-check"></i>
+          </button>   
+          &emsp;<button className="btn btn-danger mb-2 col-4 col-md-2" onClick={this.onHandleCancelClick}>
+            <i class="fas fa-times"></i>
+          </button>
+          <br />
+          </div>
+          <label id="previewProfilePictureFileName" className="col-12"></label>
         </div>
       </form>
     );

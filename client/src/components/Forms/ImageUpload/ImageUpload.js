@@ -60,8 +60,8 @@ export default class ImageUpload extends Component {
     previewFileName.innerText = `Would you like to upload ${filename}?`;
   }
 
-  handleOnCancelClick = (e) => {
-    const imageUploadForm = document.querySelector("#imageUploadForm");
+  handleOnCancelClick = (imageUploadForm) => {
+    imageUploadForm = document.querySelector("#imageUploadForm");
     imageUploadForm.style.display = "none";
     imageUploadForm.classList.remove("d-flex");
   }
@@ -89,12 +89,12 @@ export default class ImageUpload extends Component {
             />
             <br />
           </label>
-          <div className="col-12 mx-auto">
-            <button type="submit" className="btn btn-primary mb-2">
+          <div className="col-10 mx-auto">
+            <button type="submit" className="btn btn-primary mb-2 col-4 col-md-2">
               <i class="fas fa-check"></i>
             </button>
             &emsp;
-            <button className="btn btn-danger mb-2" onClick={this.handleOnCancelClick}>
+            <button className="btn btn-danger mb-2 col-4 col-md-2" onClick={this.handleOnCancelClick}>
               <i class="fas fa-times"></i>
             </button>
             <br />

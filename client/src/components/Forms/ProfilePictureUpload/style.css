@@ -1,7 +1,15 @@
 .profilePictureUploadForm {
-    margin-bottom: 5em;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(25, 25, 25, 0.97);
+  z-index: 999;
+  overflow: hidden;
 }
 
 .profilePicturesInputBtn {
-    display: none;
+  display: none;
 }

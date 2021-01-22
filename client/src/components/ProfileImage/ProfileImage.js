@@ -10,10 +10,24 @@ export default class ProfileImage extends Component {
     e.target.style.backgroundColor = "transparent";
   };
 
-  handleOnClick = (e) => {
-    const id = e.target.innerText;
-    console.log(`You clicked on ${id}.`);
+  handleOnClick = (e, profilePictureUploadForm) => {
+    profilePictureUploadForm = document.querySelector("#profilePictureUploadForm");
+    if(profilePictureUploadForm.style.display == "none") {
+      this.showProfilePictureUploadForm(profilePictureUploadForm)
+    } else {
+      this.hideProfilePictureUploadForm(profilePictureUploadForm)
+    }
   };
+
+  showProfilePictureUploadForm(profilePictureUploadForm) {
+    profilePictureUploadForm.style.display = "block"
+    profilePictureUploadForm.classList.add("d-flex");
+  }
+
+  hideProfilePictureUploadForm(profilePictureUploadForm) {
+    profilePictureUploadForm.style.display = "none";
+    profilePictureUploadForm.classList.remove("d-flex");
+  }
 
   render() {
     return (
