@@ -9,9 +9,9 @@ handleOnClick(statusForm) {
 }
   render() {
     return (
-      <div className="col-12 d-flex justify-content-center align-items-center">
+      <div className="col-12 feather d-flex justify-content-center align-items-center">
         <span
-          className="btn btn-primary mb-2 col-4 col-md-2"
+          className="btn btn-primary col-12 col-md-2 shadow-sm"
           onClick={this.handleOnClick}
         >
           <i class="fas fa-feather"></i>

@@ -9,7 +9,7 @@ const LoggedPhoto = require("../models/loggedphoto");
 module.exports = (app) => {
 
   app.get(`/api/status`, async (req, res) => {
-    let status = await StatusUpdate.find();
+    let status = await StatusUpdate.find({}).sort({ timestamp: -1 });
     return res.status(200).send(status);
   });
 

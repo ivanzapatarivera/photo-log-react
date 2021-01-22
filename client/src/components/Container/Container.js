@@ -31,7 +31,7 @@ export default class Container extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="newUpdateMessage col-12 d-flex align-items-center justify-content-center">
+            <div className="newUpdateMessage bg-info col-12 d-flex align-items-center justify-content-center">
               <StatusBtn />
             </div>
           </div>
