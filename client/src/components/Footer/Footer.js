@@ -41,7 +41,7 @@ export default class Footer extends Component {
               &nbsp;&nbsp;<span class="linkText">Profile</span>
             </div>
             {(window.location.pathname == "/LogPhoto") ? [] : (
-              <div className="log4photoFooter" onClick={this.clickOnLogAPhoto}>
+              <div className="logAphotoFooter" onClick={this.clickOnLogAPhoto}>
               <i class="fas fa-camera"></i>
               &nbsp;&nbsp;<span class="linkText">Log a Photo</span>
             </div>

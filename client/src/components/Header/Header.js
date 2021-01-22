@@ -39,6 +39,7 @@ export default class Header extends Component {
   }
   render() {
     this.hideLogAPhoto();
+    console.log(window.innerWidth);
     return (
       <nav className="navbar sticky-top shadow">
         <div className="container d-flex justify-content-center align-items-end">
@@ -59,7 +60,6 @@ export default class Header extends Component {
             ) : (
               <div
                 className="px-4 logaphoto"
-                style={{ display: "block" }}
                 onClick={this.clickOnLogAPhoto}
                 id="logAPhoto"
               >
@@ -67,7 +67,6 @@ export default class Header extends Component {
                 &emsp;<span className="linkText">Log a Photo</span>
               </div>
             )}
-
             <div className="px-4 albums" onClick={this.clickOnAlbums}>
               <i className="fas fa-map-marker-alt"></i>
               &emsp;<span className="linkText">Albums</span>
