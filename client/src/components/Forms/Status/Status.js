@@ -43,8 +43,9 @@ export default class StatusForm extends Component {
     return (
       <form
         onSubmit={this.postStatus.bind(this)}
-        className="text-center d-flex align-items-center justify-content-center statusForm"
+        className="text-center align-items-center justify-content-center statusForm"
         id="statusForm"
+        style={{ display: "none" }}
       >
         <div className="container">
           <textarea

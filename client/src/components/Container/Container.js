@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProfileImage from "../ProfileImage/ProfileImage";
 import Description from "../Description/Description";
+import StatusBtn from "../StatusBtn/StatusBtn";
 import RenderStatus from "../Status/render";
 import "./style.css";
 
@@ -8,7 +9,7 @@ import "./style.css";
 import StatusForm from "../Forms/Status/Status";
 import DescriptionForm from "../Forms/Description/Description";
 import ImageUpload from "../Forms/ImageUpload/ImageUpload";
-import ProfilePictureUpload from "../Forms/ProfilePictureUpload/ProfilePictureUpload"
+import ProfilePictureUpload from "../Forms/ProfilePictureUpload/ProfilePictureUpload";
 
 export default class Container extends Component {
   render() {
@@ -31,7 +32,7 @@ export default class Container extends Component {
           </div>
           <div className="row">
             <div className="newUpdateMessage col-12 d-flex align-items-center justify-content-center">
-              <section>Buttons for a new update message</section>
+              <StatusBtn />
             </div>
           </div>
           <div className="row">
