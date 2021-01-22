@@ -12,6 +12,7 @@ function App() {
       <div>
         <Header />
           <Route exact path="/" component={Container} />
+          <Route exact path="/UpdateProfilePicture" component={UpdateProfilePicture} />
           <Route exact path="/LogPhoto" component={LogPhoto} />
         <Footer />
       </div>
