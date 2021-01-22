@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css"
 
 export default class Description extends Component {
   constructor(props) {
@@ -16,8 +17,10 @@ export default class Description extends Component {
     console.log(e.target.value)
   }
 
-  onCancelHandler(e) {
-    console.log(e.target.innerText);
+  handleOnCancelClick(descriptionForm) {
+    descriptionForm = document.querySelector("#descriptionForm");
+    descriptionForm.classList.remove("d-flex");
+    descriptionForm.style.display = "none"
   }
 
   postDescription(req, res) {
@@ -39,7 +42,8 @@ export default class Description extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postDescription.bind(this)} className="mb-5 text-center mx-auto col-12 col-md-4">
+      <form onSubmit={this.postDescription.bind(this)} className="col-12 pb-5 text-center justify-content-center align-items-center descriptionForm" style={{ display: "none" }} id="descriptionForm">
+        <div style={{ marginTop: "10em" }} className="col-12 col-lg-6">
         <textarea
           type="text"
           name="description"
@@ -49,8 +53,19 @@ export default class Description extends Component {
           onChange={this.onChangeHandler}
         />
         <br />
-        <input type="submit" value="Update Description" className="btn btn-primary shadow-sm" />
-        &emsp;<button className="btn btn-danger shadow-sm" onClick={this.onCancelHandler}>Cancel</button>
+        <div className="col-10 mx-auto">
+            <button type="submit" className="btn btn-primary mb-2 col-4 col-md-2">
+              <i class="fas fa-check"></i>
+            </button>
+            &emsp;
+            <div className="btn btn-danger mb-2 col-4 col-md-2" onClick={this.handleOnCancelClick}>
+              <i class="fas fa-times"></i>
+            </div>
+            <br />
+            <label id="previewFileName" className=""></label>
+            <br />
+          </div>
+        </div>
       </form>
     );
   }

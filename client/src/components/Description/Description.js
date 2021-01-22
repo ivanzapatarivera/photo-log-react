@@ -3,16 +3,21 @@ import RenderDescription from "./Render/render";
 import "./style.css";
 
 export default class Description extends Component {
-  handleOnMouseOver = (e) => {
-    console.log(`You moved the mouse over ${e.target.innerText}`);
+  handleOnMouseOver = (descriptionDiv) => {
+    descriptionDiv = document.querySelector("#descriptionDiv")
+    descriptionDiv.style.backgroundColor = "rgba(25,25,25,.95)"
+    descriptionDiv.style.color = "white"
   };
 
-  handleOnMouseOut = (e) => {
-    console.log(`You moved the mouse out of `, e.target.innerText);
+  handleOnMouseOut = (descriptionDiv) => {
+    descriptionDiv = document.querySelector("#descriptionDiv")
+    descriptionDiv.style.backgroundColor = "transparent"
   };
 
-  handleOnClick = (e) => {
-    console.log(`You clicked on ${e.target.innerText}.`);
+  handleOnClick = (descriptionForm) => {
+    descriptionForm = document.querySelector("#descriptionForm");
+    descriptionForm.classList.add("d-flex");
+    descriptionForm.style.display = "block";
   };
 
   render() {
@@ -23,6 +28,7 @@ export default class Description extends Component {
           onMouseOver={this.handleOnMouseOver}
           onMouseOut={this.handleOnMouseOut}
           onClick={this.handleOnClick}
+          id="descriptionDiv"
         >
           <RenderDescription />
         </div>
