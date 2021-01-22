@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 export default class StatusForm extends Component {
   constructor(props) {
@@ -15,8 +16,10 @@ export default class StatusForm extends Component {
     });
   }
 
-  onCancelHandler(e) {
-    console.log(e.target.innerText);
+  handleOnCancelClick(statusForm) {
+    statusForm = document.querySelector("#statusForm");
+    statusForm.style.display = "none";
+    statusForm.classList.remove("d-flex");
   }
 
   postStatus(req, res) {
@@ -26,7 +29,7 @@ export default class StatusForm extends Component {
         status: this.state.status,
       }),
       headers: {
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
     })
@@ -38,18 +41,31 @@ export default class StatusForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.postStatus.bind(this)} className="my-5 mx-auto text-center col-12 col-md-4">
-        <textarea
-          type="text"
-          name="status"
-          placeholder="What's on your mind?"
-          className="col-12 mb-2"
-          style={{height: "4em"}}
-          onChange={this.onChangeHandler}
-        />
-        <br />
-        <input type="submit" value="Send Update" className="btn btn-primary shadow-sm" />
-        &emsp;<button className="btn btn-danger shadow=sm" onClick={this.onCancelHandler}>Cancel</button>
+      <form
+        onSubmit={this.postStatus.bind(this)}
+        className="text-center d-flex align-items-center justify-content-center statusForm"
+        id="statusForm"
+      >
+        <div className="container">
+          <textarea
+            type="text"
+            name="status"
+            placeholder="What's on your mind?"
+            className="col-12 col-md-6 mb-2"
+            style={{ height: "4em" }}
+            onChange={this.onChangeHandler}
+          />
+          <br />
+          <div className="col-10 mx-auto">
+          <button type="submit" className="btn btn-primary mb-2 col-4 col-md-2">
+              <i class="fas fa-check"></i>
+            </button>
+            &emsp;
+            <span className="btn btn-danger mb-2 col-4 col-md-2" onClick={this.handleOnCancelClick}>
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+        </div>
       </form>
     );
   }
