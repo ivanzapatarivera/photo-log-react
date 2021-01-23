@@ -26,7 +26,6 @@ export default class LogPhoto extends Component {
       const lastIndex = res.length - 1;
       const lastObject = res[lastIndex];
       this.state.URL = `${API}/${lastObject.filename}`
-      console.log(this.state.URL);
     })
   }
   onChangeHandler(e) {
