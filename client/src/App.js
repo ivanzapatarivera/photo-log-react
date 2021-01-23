@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Container from "./components/Container/Container";
+import UpdateProfilePicture from "./components/UpdateProfilePicture/UpdateProfilePicture";
 import LogPhoto from "./components/LogPhoto/LogPhoto";
 
 function App() {

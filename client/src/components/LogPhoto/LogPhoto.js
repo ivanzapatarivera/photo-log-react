@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import ImageTag from "./ImageTag";
+import ImageURL from "./ImageURL";
 import "./style.css";
 
-
-
 export default class LogPhoto extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,14 +13,29 @@ export default class LogPhoto extends Component {
       URL: "",
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.handleURLState();
+  }
+
+  handleURLState() {
+    const API = "/image";
+    fetch(API)
+    .then((res) => {
+      return res.json(API)
+    })
+    .then((res) => {
+      const lastIndex = res.length - 1;
+      const lastObject = res[lastIndex];
+      this.state.URL = `${API}/${lastObject.filename}`
+      console.log(this.state.URL);
+    })
   }
   onChangeHandler(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.value);
   }
-  onFormSubmit(req, res) {
+  onFormSubmit(e, req, res) {
+    e.preventDefault();
     fetch("/api/loggedphoto", {
       method: "post",
       body: JSON.stringify({
@@ -32,21 +45,23 @@ export default class LogPhoto extends Component {
         URL: this.state.URL,
       }),
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
     })
-      .then(res.json())
+      .then(res => res.json())
+      .then(
+        this.onReturnHome()
+      )
       .catch((err) => {
         res.json(err);
       });
   }
-  onCancelHandler() {
+  onReturnHome() {
     window.location.replace("/");
   }
 
   render() {
-    
     return (
       <div
         className="container logPhotoContainer"
@@ -60,7 +75,7 @@ export default class LogPhoto extends Component {
               <div className="col-12 col-md-5 d-flex align-items-center">
                 <ImageTag />
               </div>
-              <div className="col-12 col-md-7 d-flex align-items-center">
+              <div className="col-12 col-md-7 bg-info d-flex align-items-center">
                 <form
                   className="col-12 col-md-12 mx-auto"
                   onSubmit={this.onFormSubmit.bind(this)}
@@ -99,16 +114,21 @@ export default class LogPhoto extends Component {
                     className="col-12"
                     type="text"
                     name="URL"
-                    onChange={this.onChangeHandler}
-                  ></input>
+                    id="URL"
+                    defaultValue={this.state.URL}
+                    style={{ display: "none" }}
+                  />
                   <br />
-                  <button className="btn btn-primary col-3 col-md-2 my-2 px-2">
+                  <button
+                    type="submit"
+                    className="btn btn-primary col-3 col-md-2 my-2 px-2"
+                  >
                     <i class="fas fa-check"></i>
                   </button>
                   &emsp;
                   <button
                     className="btn btn-danger col-3 col-md-2 my-2 px-2"
-                    onClick={this.onCancelHandler}
+                    onClick={this.onReturnHome}
                   >
                     <i class="fas fa-times"></i>
                   </button>
@@ -119,7 +139,5 @@ export default class LogPhoto extends Component {
         </div>
       </div>
     );
-    
   }
 }
-
