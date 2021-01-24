@@ -11,17 +11,13 @@
 }
 
 .image {
-  background-color: blue;
+  padding: 0;
   height: 15em;
   color: white;
 }
 
 .description {
-  background-color: pink;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
+  padding: 0;
 }
 
 .image,

@@ -16,11 +16,10 @@ export default function RenderDescription() {
   };
   return (
     <div>
-      {(renderDescription) ? (
-        <p>{renderDescription.description}</p>
-      ) : (
-        <p>Please, enter profile description</p>
-      )}
+      {console.log(renderDescription)}
+      {(renderDescription < 1) ? 
+        <p className="btn btn-secondary">Edit Description</p> : 
+        <p>{renderDescription.description}</p>}
     </div>
   );
 }

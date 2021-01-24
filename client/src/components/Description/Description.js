@@ -25,8 +25,8 @@ export default class Description extends Component {
       <div className="row">
         <div
           className="col-12"
-          onMouseOver={this.handleOnMouseOver}
-          onMouseOut={this.handleOnMouseOut}
+          // onMouseOver={this.handleOnMouseOver}
+          // onMouseOut={this.handleOnMouseOut}
           onClick={this.handleOnClick}
           id="descriptionDiv"
         >
