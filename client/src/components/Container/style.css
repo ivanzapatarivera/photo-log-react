@@ -11,19 +11,19 @@
 }
 
 .image {
-  padding: 0;
   height: 15em;
   color: white;
 }
 
 .description {
-  padding: 0;
+  padding-left: 0;
+  
+  background-color: pink;
 }
 
-.image,
+/* .image,
 .description {
-  padding: 2em;
-}
+} */
 
 @media (max-width: 767px) {
   .description {
