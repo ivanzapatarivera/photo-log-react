@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import ImageTag from "./ImageTag";
 import "./style.css";
 
-export default class LogPhoto extends Component {
+export default class LogProfilePicture extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "",
-      location: "",
       description: "",
       URL: "",
     };
@@ -18,27 +16,28 @@ export default class LogPhoto extends Component {
   handleURLState() {
     const API = "/image";
     fetch(API)
-    .then((res) => {
-      return res.json(API)
-    })
-    .then((res) => {
-      const lastIndex = res.length - 1;
-      const lastObject = res[lastIndex];
-      this.state.URL = `${API}/${lastObject.filename}`
-    })
+      .then((res) => {
+        return res.json(API);
+      })
+      .then((res) => {
+        const lastIndex = res.length - 1;
+        const lastObject = res[lastIndex];
+        this.state.URL = `${API}/${lastObject.filename}`;
+      });
   }
+
   onChangeHandler(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
+
   onFormSubmit(e, req, res) {
     e.preventDefault();
-    fetch("/api/loggedphoto", {
+    fetch("/api/loggedprofilepicture", {
       method: "post",
       body: JSON.stringify({
         title: this.state.title,
-        location: this.state.location,
         description: this.state.description,
         URL: this.state.URL,
       }),
@@ -47,39 +46,34 @@ export default class LogPhoto extends Component {
         "Content-Type": "application/json",
       },
     })
-      .then(res => res.json())
-      .then(
-        this.onReturnHome()
-      )
+      .then((res) => res.json())
+      .then(this.onReturnHome())
       .catch((err) => {
         res.json(err);
       });
   }
+
   onReturnHome() {
     window.location.replace("/");
   }
 
   render() {
     return (
-      <div
-        className="container logPhotoContainer"
-        style={{ marginBottom: "7em", marginTop: "8.5em" }}
-        id="logPhotoContainer"
-      >
-        <h4 className="text-center py-3">Log Your Photo</h4>
+      <div className="container logPhotoContainer">
+        <div className="row">
+          <div className="col-12 text-center">
+            <h4>Update Profile Picture</h4>
+          </div>
+        </div>
         <div className="row">
           <div className="col-12">
             <div className="row">
-              <div className="col-12 col-md-5 d-flex align-items-center">
-                <ImageTag />
+              <div className="col-12 col-md-5 d-flex align-items-center bg-warning">
+                Image Tag
               </div>
-              <div className="col-12 col-md-7 d-flex align-items-center">
-                <form
-                  className="col-12 col-md-12 mx-auto"
-                  onSubmit={this.onFormSubmit.bind(this)}
-                >
+              <div className="col-12 col-md-7 d-flex-align-items-center bg-info">
+                <form className="col-12" onSubmit={this.onFormSubmit.bind(this)}>
                   <label className="pt-3">Title</label>
-                  <br />
                   <input
                     className="col-12"
                     type="text"
@@ -87,36 +81,21 @@ export default class LogPhoto extends Component {
                     placeholder="How would you like to name this picture?"
                     onChange={this.onChangeHandler}
                   ></input>
-                  <br />
-                  <label className="pt-3">Location</label>
-                  <br />
+                  <label className="pt-3">Description</label>
                   <input
                     className="col-12"
                     type="text"
-                    name="location"
-                    placeholder="Where was this picture taken?"
+                    name="description"
+                    placeholder="Say something"
                     onChange={this.onChangeHandler}
                   ></input>
-                  <br />
-                  <label className="pt-3">Description</label>
-                  <br />
-                  <textarea
-                    className="col-12"
-                    type="text"
-                    name="description"
-                    placeholder="Say something about this picture"
-                    onChange={this.onChangeHandler}
-                  ></textarea>
-                  <br />
+                  <label className="pt-3">URL</label>
                   <input
                     className="col-12"
                     type="text"
                     name="URL"
-                    id="URL"
-                    defaultValue={this.state.URL}
-                    style={{ display: "none" }}
-                  />
-                  <br />
+                    value={this.state.URL}
+                  ></input>
                   <button
                     type="submit"
                     className="btn btn-primary col-3 col-md-2 my-2 px-2"
@@ -124,12 +103,12 @@ export default class LogPhoto extends Component {
                     <i class="fas fa-check"></i>
                   </button>
                   &emsp;
-                  <button
+                  <span
                     className="btn btn-danger col-3 col-md-2 my-2 px-2"
                     onClick={this.onReturnHome}
                   >
                     <i class="fas fa-times"></i>
-                  </button>
+                  </span>
                 </form>
               </div>
             </div>

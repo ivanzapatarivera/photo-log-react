@@ -22,7 +22,7 @@ export default class ProfilePictureUpload extends Component {
     };
     axios
       .post("/profilepictures", formData, config)
-      .then(this.windowReload)
+      .then(this.onAPIChange)
       .catch((err) => {
         res.json(err);
       });
@@ -44,7 +44,7 @@ export default class ProfilePictureUpload extends Component {
       .then((data) => {
         let newDataLength = data.length;
         if (newDataLength > initialDataLength) {
-          window.location.replace("/");
+          window.location.replace("/LogProfilePicture");
         } else {
           this.validationAPI(initialDataLength, API);
         }

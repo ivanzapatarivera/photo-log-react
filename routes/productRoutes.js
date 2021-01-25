@@ -5,6 +5,7 @@ const Pastries = require("../models/pastries");
 const StatusUpdate = require("../models/status");
 const Description = require("../models/description");
 const LoggedPhoto = require("../models/loggedphoto");
+const LoggedProfilePicture = require("../models/loggedprofilepicture");
 
 module.exports = (app) => {
 
@@ -45,6 +46,19 @@ module.exports = (app) => {
   app.get(`/api/loggedphoto`, async (req, res) => {
     let loggedphoto = await LoggedPhoto.find();
     return res.status(200).send(loggedphoto);
+  })
+
+  app.post(`/api/loggedprofilepicture`, async ({ body }, res) => {
+    let loggedprofilepicture = await LoggedProfilePicture.create(body);
+    return (res) => {
+      res.json().send({ loggedprofilepicture });
+      console.log(res.json());
+    }
+  });
+
+  app.get(`/api/loggedprofilepicture`, async (req, res) => {
+    let loggedprofilepicture = await LoggedProfilePicture.find();
+    return res.status(200).send(loggedprofilepicture);
   })
   
 
