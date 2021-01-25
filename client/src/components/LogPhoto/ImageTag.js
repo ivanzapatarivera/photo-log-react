@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 import loggedPhotoService from "../../services/loggedPhotoService";
 import "./style.css";
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ImageTag from "./ImageTag";
 import "./style.css";
 
 export default class LogProfilePicture extends Component {
@@ -62,16 +63,16 @@ export default class LogProfilePicture extends Component {
       <div className="container logPhotoContainer">
         <div className="row">
           <div className="col-12 text-center">
-            <h4>Update Profile Picture</h4>
+            <h4>Picture Details</h4>
           </div>
         </div>
         <div className="row">
           <div className="col-12">
             <div className="row">
-              <div className="col-12 col-md-5 d-flex align-items-center bg-warning">
-                Image Tag
+              <div className="col-12 col-md-5 d-flex align-items-center">
+                <ImageTag />
               </div>
-              <div className="col-12 col-md-7 d-flex-align-items-center bg-info">
+              <div className="col-12 col-md-7 d-flex align-items-center">
                 <form className="col-12" onSubmit={this.onFormSubmit.bind(this)}>
                   <label className="pt-3">Title</label>
                   <input
@@ -89,12 +90,12 @@ export default class LogProfilePicture extends Component {
                     placeholder="Say something"
                     onChange={this.onChangeHandler}
                   ></input>
-                  <label className="pt-3">URL</label>
                   <input
                     className="col-12"
                     type="text"
                     name="URL"
                     value={this.state.URL}
+                    style={{ display: "none" }}
                   ></input>
                   <button
                     type="submit"
