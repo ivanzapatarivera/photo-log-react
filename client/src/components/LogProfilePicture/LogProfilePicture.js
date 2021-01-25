@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ImageTag from "./ImageTag";
+import ImageTag from "../LogPhoto/ImageTag";
 import "./style.css";
 
 export default class LogProfilePicture extends Component {
