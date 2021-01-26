@@ -1,0 +1,7 @@
+@media (max-width: 767px) {
+  .renderDescription {
+    margin: 0px;
+    padding: .75em;
+    color:rgb(60, 60, 60);
+  }
+}

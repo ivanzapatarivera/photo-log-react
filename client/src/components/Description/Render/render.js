@@ -18,7 +18,7 @@ export default function RenderDescription() {
     <div>
       {(renderDescription < 1) ? 
         <p className="btn btn-secondary mb-0">Edit Description</p> : 
-        <p>{renderDescription.description}</p>}
+        <p className="renderDescription">{renderDescription.description}</p>}
     </div>
   );
 }

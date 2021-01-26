@@ -22,17 +22,13 @@ export default class Description extends Component {
 
   render() {
     return (
-      <div className="row">
+      
         <div
-          className="col-12"
-          // onMouseOver={this.handleOnMouseOver}
-          // onMouseOut={this.handleOnMouseOut}
           onClick={this.handleOnClick}
           id="descriptionDiv"
         >
           <RenderDescription />
         </div>
-      </div>
     );
   }
 }
