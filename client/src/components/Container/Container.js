@@ -20,10 +20,10 @@ export default class Container extends Component {
             <div className="col-12">
               <section>
                 <div className="row">
-                  <div className="col-md-4 col-12 image d-flex align-items-end justify-content-center">
+                  <div className="col-md-4 col-12 image d-flex align-items-center justify-content-center">
                     <ProfileImage />
                   </div>
-                  <div className="col-md-8 col-12 d-flex align-items-end justify-content-start description">
+                  <div className="col-md-8 col-12 d-flex align-items-center justify-content-start description">
                     <Description />
                   </div>
                 </div>
@@ -31,7 +31,7 @@ export default class Container extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="newUpdateMessage bg-info col-12 d-flex align-items-center justify-content-center">
+            <div className="newUpdateMessage bg-info col-12 d-flex align-items-center justify-content-left">
               <StatusBtn />
             </div>
           </div>
