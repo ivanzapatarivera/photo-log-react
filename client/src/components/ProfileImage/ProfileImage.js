@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RenderProfileImage from "./Render"; 
 import "./style.css";
 
 export default class ProfileImage extends Component {
@@ -11,16 +12,18 @@ export default class ProfileImage extends Component {
   };
 
   handleOnClick = (e, profilePictureUploadForm) => {
-    profilePictureUploadForm = document.querySelector("#profilePictureUploadForm");
-    if(profilePictureUploadForm.style.display == "none") {
-      this.showProfilePictureUploadForm(profilePictureUploadForm)
+    profilePictureUploadForm = document.querySelector(
+      "#profilePictureUploadForm"
+    );
+    if (profilePictureUploadForm.style.display == "none") {
+      this.showProfilePictureUploadForm(profilePictureUploadForm);
     } else {
-      this.hideProfilePictureUploadForm(profilePictureUploadForm)
+      this.hideProfilePictureUploadForm(profilePictureUploadForm);
     }
   };
 
   showProfilePictureUploadForm(profilePictureUploadForm) {
-    profilePictureUploadForm.style.display = "block"
+    profilePictureUploadForm.style.display = "block";
     profilePictureUploadForm.classList.add("d-flex");
   }
 
@@ -32,17 +35,13 @@ export default class ProfileImage extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-12">
-          <div className="row">
-            <div
-              className="col-12 mx-auto"
-              onMouseOver={this.handleMouseOver}
-              onMouseOut={this.handleMouseOut}
-              onClick={this.handleOnClick}
-            >
-              Picture Component
-            </div>
-          </div>
+        <div
+          className="col-12 d-flex justify-content-center align-items-center text-dark"
+          onMouseOver={this.handleMouseOver}
+          onMouseOut={this.handleMouseOut}
+          onClick={this.handleOnClick}
+        >
+        <RenderProfileImage />
         </div>
       </div>
     );
