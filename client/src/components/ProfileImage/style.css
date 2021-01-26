@@ -1,0 +1,4 @@
+.profileImage:hover {
+    opacity: 0.85;
+    transition: all 1s;
+}

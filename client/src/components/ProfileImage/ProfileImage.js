@@ -3,13 +3,7 @@ import RenderProfileImage from "./Render";
 import "./style.css";
 
 export default class ProfileImage extends Component {
-  handleMouseOver = (e) => {
-    e.target.style.backgroundColor = "red";
-  };
 
-  handleMouseOut = (e) => {
-    e.target.style.backgroundColor = "transparent";
-  };
 
   handleOnClick = (e, profilePictureUploadForm) => {
     profilePictureUploadForm = document.querySelector(
@@ -36,9 +30,7 @@ export default class ProfileImage extends Component {
     return (
       <div className="row">
         <div
-          className="col-12 d-flex justify-content-center align-items-center text-dark"
-          onMouseOver={this.handleMouseOver}
-          onMouseOut={this.handleMouseOut}
+          className="col-12 d-flex justify-content-center align-items-center"
           onClick={this.handleOnClick}
         >
         <RenderProfileImage />
