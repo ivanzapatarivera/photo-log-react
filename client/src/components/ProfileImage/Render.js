@@ -20,8 +20,9 @@ export default function RenderProfileImage() {
 
     return (
         <div>
-            {(profileImage) ? 
-                <img src={profileImage.URL} alt={profileImage.description} className="imagePreview" id={profileImage._id} style={{ width: "12.5em", height: "auto" }} /> : (<p>Add Profile Image</p>)
+            {(profileImage < 1) ?
+                <p className="btn btn-primary mb-0">Add Profile Picture</p> :
+                <img src={profileImage.URL} alt={profileImage.description} className="imagePreview" id={profileImage._id} style={{ width: "auto", height: "12.5em" }} /> 
             }
         </div>
     );

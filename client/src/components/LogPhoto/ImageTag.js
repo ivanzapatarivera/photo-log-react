@@ -18,7 +18,7 @@ export default function ImageTag() {
   return (
     <div className="px-1">
       {
-        (imageTag) ? <img src={"/image/" + imageTag.filename} alt={imageTag.filename} className="imagePreview" id="imageTag" /> : (<p>No Image</p>)
+        (imageTag) ? <img src={"/image/" + imageTag.filename} alt={imageTag.filename} className="imagePreview" id="imageTag" /> : <p>No Image</p>
       }
     </div>
   );

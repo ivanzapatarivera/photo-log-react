@@ -16,7 +16,6 @@ export default function RenderDescription() {
   };
   return (
     <div>
-      {console.log(renderDescription)}
       {(renderDescription < 1) ? 
         <p className="btn btn-secondary mb-0">Edit Description</p> : 
         <p>{renderDescription.description}</p>}
