@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnsbrook/photo-log-react.git"
+    "url": "git+https://github.com/ivanzapatarivera/photo-log-react.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnsbrook/photo-log-react/issues"
+    "url": "https://github.com/ivanzapatarivera/photo-log-react/issues"
   },
-  "homepage": "https://github.com/johnsbrook/photo-log-react#readme",
+  "homepage": "https://github.com/ivanzapatarivera/photo-log-react#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
@@ -29,7 +29,7 @@
     "gridfs-stream": "^1.1.1",
     "isomorphic-fetch": "^3.0.0",
     "mongojs": "^3.1.0",
-    "mongoose": "^5.11.8",
+    "mongoose": "^5.11.13",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "multer-gridfs-storage": "^4.2.0",

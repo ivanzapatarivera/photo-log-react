@@ -1,5 +1,5 @@
 {
-  "homepage": "http://johnsbrook.github.io/photo-log-react",
+  "homepage": "http://ivanzapatarivear.github.io/photo-log-react",
   "name": "photo-log-react",
   "version": "0.1.0",
   "private": true,

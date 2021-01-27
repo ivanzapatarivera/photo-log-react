@@ -14,18 +14,24 @@ export default class ProfilePictureUpload extends Component {
 
   onFormSubmit(e, res, formData, config) {
     e.preventDefault();
-    this.onAPIChange();
-    formData = new FormData();
-    formData.append("profilepictures", this.state.file);
-    config = {
-      header: { "Content-Type": "multipart/form-data" },
-    };
-    axios
-      .post("/profilepictures", formData, config)
-      .then(this.onAPIChange)
-      .catch((err) => {
-        res.json(err);
-      });
+    const profilepictures = document.querySelector("#profilepictures");
+    if (profilepictures.value.length > 0) {
+      this.onAPIChange();
+      formData = new FormData();
+      formData.append("profilepictures", this.state.file);
+      config = {
+        header: { "Content-Type": "multipart/form-data" },
+      };
+      axios
+        .post("/profilepictures", formData, config)
+        .then(this.onAPIChange)
+        .catch((err) => {
+          res.json(err);
+        });
+    } else
+      alert(
+        `You've not selected a picture! Tap on "Select Photo" and choose the picture you want as your profile image.`
+      );
   }
 
   onAPIChange() {
@@ -69,7 +75,9 @@ export default class ProfilePictureUpload extends Component {
   }
 
   onHandleCancelClick(profilePictureUploadForm) {
-    profilePictureUploadForm = document.querySelector("#profilePictureUploadForm");
+    profilePictureUploadForm = document.querySelector(
+      "#profilePictureUploadForm"
+    );
     profilePictureUploadForm.style.display = "none";
     profilePictureUploadForm.classList.remove("d-flex");
   }
@@ -89,18 +97,26 @@ export default class ProfilePictureUpload extends Component {
               type="file"
               name="profilepictures"
               className="profilePicturesInputBtn"
+              id="profilepictures"
               onChange={this.onChange}
             ></input>
           </label>
           <br />
           <div className="col-10 mx-auto">
-          <button type="submit" className="btn btn-primary mb-2 col-4 col-md-2">
-            <i class="fas fa-check"></i>
-          </button>   
-          &emsp;<button className="btn btn-danger mb-2 col-4 col-md-2" onClick={this.onHandleCancelClick}>
-            <i class="fas fa-times"></i>
-          </button>
-          <br />
+            <button
+              type="submit"
+              className="btn btn-primary mb-2 col-4 col-md-2"
+            >
+              <i class="fas fa-check"></i>
+            </button>
+            &emsp;
+            <span
+              className="btn btn-danger mb-2 col-4 col-md-2"
+              onClick={this.onHandleCancelClick}
+            >
+              <i class="fas fa-times"></i>
+            </span>
+            <br />
           </div>
           <label id="previewProfilePictureFileName" className="col-12"></label>
         </div>

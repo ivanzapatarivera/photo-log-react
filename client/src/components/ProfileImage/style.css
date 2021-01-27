@@ -1,4 +1,12 @@
+.profileImage {
+    width: 13em;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 0 5px rgb(200, 200, 200)
+}
+
 .profileImage:hover {
-    opacity: 0.85;
-    transition: all 1s;
+    filter: grayscale(30%) opacity(95%);
+    transition: all .25s;
+    cursor:pointer;
 }
