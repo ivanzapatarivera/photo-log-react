@@ -43,7 +43,7 @@ let storage = new GridFsStorage({
 
 const upload = multer({ storage });
 
-// Uploading images to albums
+// Uploading images to upload
 app.post("/upload", upload.single("upload"), (req, res) => {
   res.redirect("/LogPhoto");
 });
